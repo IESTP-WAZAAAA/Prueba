@@ -51,7 +51,7 @@
                             <label for="reg-log"></label>
                             <div class="card-3d-wrap">
                                 <div class="card-3d-wrapper">
-                                    <form class="card-front" action="" id="loginForm" method="post">
+                                    <form class="card-front" id="loginForm" method="post">
                                         <div class="center-wrap">
                                             <h4 class="heading">Login</h4>
                                             <div class="form-group">
@@ -65,7 +65,7 @@
                                                     class="form-style" placeholder="Contraseña" autocomplete="off">
                                                 <i class="input-icon material-icons">lock</i>
                                             </div>
-                                            <button type="submit" class="btn" id="loginBtn">Acceder</button>
+                                            <button type="submit" class="btn" id="loginBtn">Ingresar</button>
                                             <div id="errorMessage" style="color: red; margin-top: 10px; display: none;">
                                             </div>
                                         </div>
@@ -109,7 +109,7 @@
                                                 <i class="input-icon material-icons">perm_identity</i>
                                             </div>
                                             <button type="button" class="btn" id="buscar">Consultar</button>
-
+<br>
                                             <!-- Nombres -->
                                             <div class="form-group">
                                                 <input type="text" id="nombres" name="nombres" class="form-style"
@@ -143,7 +143,6 @@
                                             </p>
                                         </div>
                                     </form>
-
                                     <script>
                                         document.getElementById('registerForm').addEventListener('submit', function (e) {
                                             e.preventDefault();
@@ -245,5 +244,4 @@
             });
     });
 </script>
-
 </html>
