@@ -1,14 +1,14 @@
 <?php
-// Configuración
+// Configuración de la api
 $token = 'apis-token-12824.HUAGGkHXJjln9Sdw3h8p8Nh9DHrKFe2N';
 $dni = $_REQUEST['dni'];
 
-// Se valida el DNI
+// Se valida el DNI enviado
 if (!preg_match('/^\d{8}$/', $dni)) {
     die(json_encode(['error' => 'El DNI no es válido.']));
 }
 
-// Se inicia la llamada a la API
+// Se inicia la llamada a la API de la RENIEC
 $curl = curl_init();
 
 curl_setopt_array($curl, array(

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Rotation Login / Signup Box</title>
+    <title>Jovenes por un nuevo mundo</title>
     <link rel="stylesheet" href="./css/login.css">
     <link rel="shortcut icon" href="./images/icono.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -12,6 +13,7 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container">
@@ -28,13 +30,17 @@
                 <div class="left">
                     <span class="line"></span>
                     <h2>Bienvenidos a la página <br> de <span>Jovenes por un nuevo mundo!</span></h2>
-                    <p>Registrate para ver toda la novedad de la pagina, y no te pierdas de ninguna actualización, o ingresa como invitado</p>
+                    <p>Registrate para ver toda la novedad de la pagina, y no te pierdas de ninguna actualización, o
+                        ingresa como invitado</p>
                     <a href="./index.html" class="btn">Ingresar como invitado</a>
 
                     <div class="social-media">
-                        <a href="https://www.facebook.com/share/1BcGSGbqQF/ "><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/jovenes_por_un_nuevo_mundo?igsh=MWEyZnlpc3Z2NjJqOA== "><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@jovenesporunnuevomundo?_t=ZM-8tJHOF7mDcE&_r=1 "><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.facebook.com/share/1BcGSGbqQF/ "><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/jovenes_por_un_nuevo_mundo?igsh=MWEyZnlpc3Z2NjJqOA== "><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@jovenesporunnuevomundo?_t=ZM-8tJHOF7mDcE&_r=1 "><i
+                                class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="right">
@@ -49,18 +55,19 @@
                                         <div class="center-wrap">
                                             <h4 class="heading">Login</h4>
                                             <div class="form-group">
-                                                <input type="text" id="usuario" name="usuario" class="form-style" placeholder="Usuario"
-                                                    autocomplete="off">
+                                                <input type="text" id="usuario" name="usuario" class="form-style"
+                                                    placeholder="Usuario" autocomplete="off">
                                                 <i class="input-icon material-icons">alternate_email</i>
                                             </div>
                                             <br>
                                             <div class="form-group">
-                                                <input type="password" id="contraseña" name="contraseña" class="form-style" placeholder="Contraseña"
-                                                    autocomplete="off">
+                                                <input type="password" id="contraseña" name="contraseña"
+                                                    class="form-style" placeholder="Contraseña" autocomplete="off">
                                                 <i class="input-icon material-icons">lock</i>
                                             </div>
                                             <button type="submit" class="btn" id="loginBtn">Acceder</button>
-                                            <div id="errorMessage" style="color: red; margin-top: 10px; display: none;"></div>
+                                            <div id="errorMessage" style="color: red; margin-top: 10px; display: none;">
+                                            </div>
                                         </div>
                                     </form>
                                     <script>
@@ -68,7 +75,7 @@
                                             const usuario = document.getElementById("usuario").value;
                                             const contraseña = document.getElementById("contraseña").value;
                                             const errorMessage = document.getElementById("errorMessage");
-                                    
+
                                             fetch("./PHP/login.php", {
                                                 method: "POST",
                                                 headers: {
@@ -79,9 +86,9 @@
                                                 .then((response) => response.json())
                                                 .then((data) => {
                                                     if (data.success) {
-                                                        window.location.href = "index.html"; 
+                                                        window.location.href = "index.html";
                                                     } else {
-                                                        errorMessage.textContent = data.message; 
+                                                        errorMessage.textContent = data.message;
                                                         errorMessage.style.display = "block";
                                                     }
                                                 })
@@ -97,45 +104,52 @@
                                             <h4 class="heading">Regístrate</h4>
                                             <!-- DNI -->
                                             <div class="form-group">
-                                                <input type="text" id="documento" name="documento" class="form-style" maxlength="8" placeholder="Ingresa tu DNI" required>
+                                                <input type="text" id="documento" name="documento" class="form-style"
+                                                    maxlength="8" placeholder="Ingresa tu DNI" required>
                                                 <i class="input-icon material-icons">perm_identity</i>
                                             </div>
                                             <button type="button" class="btn" id="buscar">Consultar</button>
-                                    
+
                                             <!-- Nombres -->
                                             <div class="form-group">
-                                                <input type="text" id="nombres" name="nombres" class="form-style" placeholder="Nombres" readonly required>
+                                                <input type="text" id="nombres" name="nombres" class="form-style"
+                                                    placeholder="Nombres" readonly required>
                                                 <i class="input-icon material-icons">perm_identity</i>
                                             </div>
-                                    
+
                                             <!-- Apellidos -->
                                             <div class="form-group">
-                                                <input type="text" id="apellidoPaterno" name="apellidoPaterno" class="form-style" placeholder="Apellidos" readonly required>
+                                                <input type="text" id="apellidoPaterno" name="apellidoPaterno"
+                                                    class="form-style" placeholder="Apellidos" readonly required>
                                                 <i class="input-icon material-icons">perm_identity</i>
                                             </div>
-                                    
+
                                             <!-- Usuario -->
                                             <div class="form-group">
-                                                <input type="text" id="usuario" name="usuario" class="form-style" placeholder="Usuario" required>
+                                                <input type="text" id="usuario" name="usuario" class="form-style"
+                                                    placeholder="Usuario" required>
                                                 <i class="input-icon material-icons">perm_identity</i>
                                             </div>
-                                    
+
                                             <!-- Contraseña -->
                                             <div class="form-group">
-                                                <input type="password" id="contraseña" name="contraseña" class="form-style" placeholder="Contraseña" required>
+                                                <input type="password" id="contraseña" name="contraseña"
+                                                    class="form-style" placeholder="Contraseña" required>
                                                 <i class="input-icon material-icons">lock</i>
                                             </div>
                                             <button type="submit" class="btn">Registrar</button>
-                                            <p id="responseMessage" style="display:none; color: green; margin-top: 10px;">Registro exitoso.</p>
+                                            <p id="responseMessage"
+                                                style="display:none; color: green; margin-top: 10px;">Registro exitoso.
+                                            </p>
                                         </div>
                                     </form>
-                                    
+
                                     <script>
                                         document.getElementById('registerForm').addEventListener('submit', function (e) {
                                             e.preventDefault();
-                                    
+
                                             const formData = new FormData(this);
-                                    
+
                                             fetch('./PHP/registrer.php', {
                                                 method: 'POST',
                                                 body: formData
@@ -146,11 +160,11 @@
                                                     messageEl.textContent = data.includes('Registro exitoso') ? "Registro exitoso." : data;
                                                     messageEl.style.color = data.includes('Registro exitoso') ? "green" : "red";
                                                     messageEl.style.display = 'block';
-                                                    
+
                                                     setTimeout(() => {
                                                         messageEl.style.display = 'none';
                                                     }, 4000);
-                                    
+
                                                     if (data.includes('Registro exitoso')) {
                                                         document.getElementById('registerForm').reset();
                                                     }
@@ -160,13 +174,13 @@
                                                     messageEl.textContent = "Error al procesar el registro.";
                                                     messageEl.style.color = "red";
                                                     messageEl.style.display = 'block';
-                                    
+
                                                     setTimeout(() => {
                                                         messageEl.style.display = 'none';
                                                     }, 4000);
                                                 });
                                         });
-                                    </script>                                                                      
+                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -231,4 +245,5 @@
             });
     });
 </script>
+
 </html>
