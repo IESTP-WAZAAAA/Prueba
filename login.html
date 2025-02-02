@@ -51,54 +51,24 @@
                             <label for="reg-log"></label>
                             <div class="card-3d-wrap">
                                 <div class="card-3d-wrapper">
-                                    <form class="card-front" id="loginForm" method="post">
+                                    <form class="card-front" action="./PHP/login.php" method="post">
                                         <div class="center-wrap">
                                             <h4 class="heading">Login</h4>
                                             <div class="form-group">
                                                 <input type="text" id="usuario" name="usuario" class="form-style"
-                                                    placeholder="Usuario" autocomplete="off">
+                                                    placeholder="Usuario">
                                                 <i class="input-icon material-icons">alternate_email</i>
                                             </div>
                                             <br>
                                             <div class="form-group">
                                                 <input type="password" id="contraseña" name="contraseña"
-                                                    class="form-style" placeholder="Contraseña" autocomplete="off">
+                                                    class="form-style" placeholder="Contraseña">
                                                 <i class="input-icon material-icons">lock</i>
                                             </div>
                                             <button type="submit" class="btn" id="loginBtn">Ingresar</button>
-                                            <div id="errorMessage" style="color: red; margin-top: 10px; display: none;">
-                                            </div>
                                         </div>
                                     </form>
-                                    <script>
-                                        document.getElementById("loginBtn").addEventListener("click", function () {
-                                            const usuario = document.getElementById("usuario").value;
-                                            const contraseña = document.getElementById("contraseña").value;
-                                            const errorMessage = document.getElementById("errorMessage");
 
-                                            fetch("./PHP/login.php", {
-                                                method: "POST",
-                                                headers: {
-                                                    "Content-Type": "application/x-www-form-urlencoded",
-                                                },
-                                                body: `usuario=${encodeURIComponent(usuario)}&contraseña=${encodeURIComponent(contraseña)}`,
-                                            })
-                                                .then((response) => response.json())
-                                                .then((data) => {
-                                                    if (data.success) {
-                                                        window.location.href = "index.html";
-                                                    } else {
-                                                        errorMessage.textContent = data.message;
-                                                        errorMessage.style.display = "block";
-                                                    }
-                                                })
-                                                .catch((error) => {
-                                                    console.error("Error:", error);
-                                                    errorMessage.textContent = "Ocurrió un error. Inténtalo nuevamente.";
-                                                    errorMessage.style.display = "block";
-                                                });
-                                        });
-                                    </script>
                                     <form class="card-back" id="registerForm">
                                         <div class="center-wrap">
                                             <h4 class="heading">Regístrate</h4>
@@ -116,21 +86,18 @@
                                                     placeholder="Nombres" readonly required>
                                                 <i class="input-icon material-icons">perm_identity</i>
                                             </div>
-
                                             <!-- Apellidos -->
                                             <div class="form-group">
                                                 <input type="text" id="apellidoPaterno" name="apellidoPaterno"
                                                     class="form-style" placeholder="Apellidos" readonly required>
                                                 <i class="input-icon material-icons">perm_identity</i>
                                             </div>
-
                                             <!-- Usuario -->
                                             <div class="form-group">
                                                 <input type="text" id="usuario" name="usuario" class="form-style"
                                                     placeholder="Usuario" required>
                                                 <i class="input-icon material-icons">perm_identity</i>
                                             </div>
-
                                             <!-- Contraseña -->
                                             <div class="form-group">
                                                 <input type="password" id="contraseña" name="contraseña"
@@ -138,48 +105,8 @@
                                                 <i class="input-icon material-icons">lock</i>
                                             </div>
                                             <button type="submit" class="btn">Registrar</button>
-                                            <p id="responseMessage"
-                                                style="display:none; color: green; margin-top: 10px;">Registro exitoso.
-                                            </p>
                                         </div>
                                     </form>
-                                    <script>
-                                        document.getElementById('registerForm').addEventListener('submit', function (e) {
-                                            e.preventDefault();
-
-                                            const formData = new FormData(this);
-
-                                            fetch('./PHP/registrer.php', {
-                                                method: 'POST',
-                                                body: formData
-                                            })
-                                                .then(response => response.text())
-                                                .then(data => {
-                                                    const messageEl = document.getElementById('responseMessage');
-                                                    messageEl.textContent = data.includes('Registro exitoso') ? "Registro exitoso." : data;
-                                                    messageEl.style.color = data.includes('Registro exitoso') ? "green" : "red";
-                                                    messageEl.style.display = 'block';
-
-                                                    setTimeout(() => {
-                                                        messageEl.style.display = 'none';
-                                                    }, 4000);
-
-                                                    if (data.includes('Registro exitoso')) {
-                                                        document.getElementById('registerForm').reset();
-                                                    }
-                                                })
-                                                .catch(error => {
-                                                    const messageEl = document.getElementById('responseMessage');
-                                                    messageEl.textContent = "Error al procesar el registro.";
-                                                    messageEl.style.color = "red";
-                                                    messageEl.style.display = 'block';
-
-                                                    setTimeout(() => {
-                                                        messageEl.style.display = 'none';
-                                                    }, 4000);
-                                                });
-                                        });
-                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -192,13 +119,11 @@
     <script>
         $('#buscar').click(function () {
             let dni = $('#documento').val();
-
             // Validación básica del DNI
             if (!/^\d{8}$/.test(dni)) {
                 alert("El DNI debe tener 8 dígitos.");
                 return;
             }
-
             // Llamada AJAX
             $.ajax({
                 url: 'PHP/consulta_dni.php',

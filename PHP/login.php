@@ -1,40 +1,41 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
+session_start();
 $host = 'localhost';
 $user = 'root';
 $password = '';
 $dbname = 'jovenes';
 
-// Conexión a la base de datos
 $conn = new mysqli($host, $user, $password, $dbname);
 
 if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-// Recibir datos del formulario
-$usuario = $_POST['usuario'] ?? '';
-$contraseña = $_POST['contraseña'] ?? '';
-
-// Validar que los campos no estén vacíos
-if (empty($usuario) || empty($contraseña)) {
-    echo json_encode(['success' => false, 'message' => 'Por favor, completa todos los campos.']);
+    echo json_encode(["status" => "error", "message" => "Conexión fallida: " . $conn->connect_error]);
     exit;
 }
 
-// Consultar usuario en la base de datos
-$sql = "SELECT * FROM personas WHERE usuario = ? AND contraseña = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param('ss', $usuario, $contraseña);
-$stmt->execute();
-$result = $stmt->get_result();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $usuario = $_POST['usuario'];
+    $contraseña = $_POST['contraseña'];
 
-if ($result->num_rows > 0) {
-    echo json_encode(['success' => true]);
-} else {
-    echo json_encode(['success' => false, 'message' => 'Usuario o contraseña incorrectos.']);
+    $stmt = $conn->prepare("SELECT id, usuario, contraseña FROM personas WHERE usuario = ?");
+    $stmt->bind_param("s", $usuario);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+    
+    if ($resultado->num_rows > 0) {
+        $fila = $resultado->fetch_assoc();
+        if (password_verify($contraseña, $fila['contraseña'])) {
+            $_SESSION['usuario'] = $fila['usuario'];
+            header("Location: ../index.html");
+            exit();
+        } else {
+            echo "<script>alert('Usuario o contraseña incorrectos'); history.back();</script>";
+        }
+    } else {
+        echo "<script>alert('Usuario o contraseña incorrectos'); history.back();</script>";
+    }
+    
+    $stmt->close();
+    $conn->close();
 }
-
-$stmt->close();
-$conn->close();
 ?>
+
