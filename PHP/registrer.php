@@ -31,7 +31,6 @@ if (!preg_match('/^\d{8}$/', $documento)) {
     exit;
 }
 
-// Verificar duplicados
 $sql_check = "SELECT * FROM personas WHERE usuario = ? OR documento = ?";
 $stmt_check = $conn->prepare($sql_check);
 $stmt_check->bind_param('ss', $usuario, $documento);

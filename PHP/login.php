@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fila = $resultado->fetch_assoc();
         if (password_verify($contraseña, $fila['contraseña'])) {
             $_SESSION['usuario'] = $fila['usuario'];
-            header("Location: ../index.html");
+            header("Location: ../index.php");
             exit();
         } else {
             echo "<script>alert('Usuario o contraseña incorrectos'); history.back();</script>";
@@ -38,4 +38,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-

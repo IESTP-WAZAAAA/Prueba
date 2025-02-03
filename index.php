@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
+    $botonTexto = 'Cerrar sesión';
+    $botonEnlace = './PHP/logout.php';
+} else {
+    $botonTexto = 'Iniciar sesión';
+    $botonEnlace = './login.html';
+}
+?>
+
+
 <!doctype html>
 <html lang="en-gb" class="no-js">
 <head>
@@ -19,6 +31,30 @@
     <link href="css/style.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<style>
+    .btn-sesion {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #006DA4; /* Azul basado en tu paleta de colores */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-sesion:hover {
+    background-color: #003553; /* Azul más oscuro al pasar el mouse */
+    transform: scale(1.05);
+}
+
+.btn-sesion:active {
+    background-color: #032030; /* Color más oscuro al presionar */
+    transform: scale(0.95);
+}
+</style>
 
 <body data-spy="scroll" data-target="#main-menu">
     <!--Animación de carga -->
@@ -48,6 +84,7 @@
                         </a>
                     </div>
                     <!--Fin del logo -->
+                    <!--Inicio de la navegación -->
                     <div class="clear-toggle"></div>
                     <div id="main-menu" class="collapse scroll navbar-right">
                         <ul class="nav">
@@ -57,6 +94,9 @@
                             <li><a href="#services">Servicios</a> </li>
                             <li><a href="#blog">Proyectos</a></li>
                             <li><a href="#contact">Contactos</a></li>
+                            <button class="btn-sesion" onclick="window.location.href='<?php echo $botonEnlace; ?>'">
+    <?php echo $botonTexto; ?>
+</button>
                         </ul>
                     </div>
                 </div>
@@ -318,7 +358,7 @@
                                                 <div class="item"><img src="images/works/img6.jpg" alt=""></div>
                                             </div>
                                         </div>
-                                        <!-- End Carousel-->
+                                        <!-- Fin del carrusel-->
                                     </div>
                                     <!-- End Tab content 1-->
                                     <!-- Start Tab content 2-->
@@ -507,12 +547,12 @@
     </section>
     <!--End Section-->
     
-    <!--Start History-->
+    <!--inicio de la sección de historia-->
     <section id="history" class="section parallax">
         <div class="overlay"></div>
         <div class="container">
             <div class="title-box text-center white">
-                <h2 class="title">History</h2>
+                <h2 class="title">Historia</h2>
             </div>
             <!-- History Timeline -->
             <ul class="timeline list-unstyled">
@@ -568,9 +608,9 @@
             </ul>
             <!-- End History Timeline -->
 
-        </div> <!--/.container-->
+        </div> 
     </section>
-    <!--End History-->
+    <!--Fin de la sección de historia-->
 
 
     <!-- Inicio del portafoleo-->
@@ -588,7 +628,7 @@
                 <li class="filter" data-filter="fashion">Eventos</li>
                 <li class="filter" data-filter="event">Ambiental</li>
                 <li class="filter" data-filter="wedding">social</li>
-                <li class="filter" data-filter="corporate">Corporate</li>
+                <li class="filter" data-filter="corporate">Comunitario</li>
             </ul>
         </div>
 
@@ -927,13 +967,12 @@
                         </div>
                         <!--End Caption-->
 
-                    </div> <!-- /.work-image-->
+                    </div> 
                 </li>
-                <!--End Work Item -->
             </ul>
         </div>
     </section>
-    <!--End portfolio-->
+    <!-- Fin del contenedor de trabajos -->
     <br><br><br><br>
 
     <!--Start Call To Action-->
@@ -996,10 +1035,9 @@
 
 
             </div>
-        </div> <!-- /.container-->
+        </div>
     </section>
     <!--End Skills-->
-
 
     <!-- Inicio de la casa del emprendedor-->
     <section id="services" class="section">
@@ -1468,30 +1506,30 @@
             <div class="col-md-8 col-md-offset-2 contact-form">
 
                 <div class="contact-info text-center">
-                    <p>944 688 913</p>
-                    <p>123 lorem ipsum, 4th floor, lorem, ipsum </p>
-                    <p>jovenesporunnuevomundo@gmail.com</p>
+                    <p>📞 944 688 913</p>
+                    <p>🏰​ Jr. Gamarra 432, 4to piso (Entra por la notaría León de la Cruz y sube directo por las escaleras) </p>
+                    <p>📧​ jovenesporunnuevomundo@gmail.com</p>
                 </div>
 
                 <form method="post">
                     <div class="row">
                         <div class="col-md-4">
-                            <input class="form-control" id="name" placeholder="DNI" type="text">
+                            <input type="text" name="documento" class="form-control" id="documento" placeholder="DNI">
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" id="email" placeholder="Nombres" type="email">
+                            <input class="form-control" id="nombres" name="nombres" placeholder="Nombres" type="text">
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" id="subject" placeholder="Apellidos" type="text">
+                            <input class="form-control" id="apellidoPaterno" name="apellidoPaterno" placeholder="Apellidos" type="text">
                         </div>
                         <div class="col-md-4">
-                            <input type="email" class="form-control" id="subject" placeholder="Correo Electronico" type="text">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electronico">
                         </div>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="subject" placeholder="Telefono" type="text">
+                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
                         </div>
                         <div class="col-md-12">
-                            <textarea class="form-control" id="message" rows="7" placeholder="Escribe tu mensaje"></textarea>
+                            <textarea class="form-control" id="mensaje" rows="7" placeholder="Escribe tu mensaje"></textarea>
                         </div>
                         <div class="col-md-12 text-right">
                             <button type="submit" class="btn btn-green">Enviar</button>
@@ -1509,13 +1547,13 @@
                 <!-- Incio de copyright-->
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="copyright">
-                        <p>Copyright © 2025 Todos los derechos reservador: <a href="#">Jhon Lozada Huamán</a>
+                        <p>Copyright © 2025 Todos los derechos reservados: <a href="#">Jhon Lozada Huamán</a>
                         </p>
                     </div>
                 </div>
                 <!-- Fin del copyright-->
 
-                <!--start social icons-->
+                <!-- Iconos-->
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="social-icons">
                         <ul>

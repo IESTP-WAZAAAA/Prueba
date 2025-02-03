@@ -13,6 +13,12 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+<script>
+    window.history.pushState(null, "", window.location.href);
+    window.onpopstate = function () {
+        window.history.pushState(null, "", window.location.href);
+    };
+</script>
 
 <body>
     <nav class="navbar">
@@ -32,7 +38,8 @@
                     <h2>Bienvenidos a la página <br> de <span>Jovenes por un nuevo mundo!</span></h2>
                     <p>Registrate para ver toda la novedad de la pagina, y no te pierdas de ninguna actualización, o
                         ingresa como invitado</p>
-                    <a href="./index.html" class="btn">Ingresar como invitado</a>
+                        <a href="./PHP/invitado.php" class="btn">Ingresar como invitado</a>
+
 
                     <div class="social-media">
                         <a href="https://www.facebook.com/share/1BcGSGbqQF/ "><i
@@ -79,7 +86,7 @@
                                                 <i class="input-icon material-icons">perm_identity</i>
                                             </div>
                                             <button type="button" class="btn" id="buscar">Consultar</button>
-<br>
+                                            <br>
                                             <!-- Nombres -->
                                             <div class="form-group">
                                                 <input type="text" id="nombres" name="nombres" class="form-style"
@@ -119,12 +126,12 @@
     <script>
         $('#buscar').click(function () {
             let dni = $('#documento').val();
-            // Validación básica del DNI
+
             if (!/^\d{8}$/.test(dni)) {
                 alert("El DNI debe tener 8 dígitos.");
                 return;
             }
-            // Llamada AJAX
+
             $.ajax({
                 url: 'PHP/consulta_dni.php',
                 type: 'post',
