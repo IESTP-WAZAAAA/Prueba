@@ -9,7 +9,6 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
 }
 ?>
 
-
 <!doctype html>
 <html lang="en-gb" class="no-js">
 <head>
@@ -38,7 +37,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background-color: #006DA4; /* Azul basado en tu paleta de colores */
+    background-color: #006DA4;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -46,12 +45,12 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
 }
 
 .btn-sesion:hover {
-    background-color: #003553; /* Azul más oscuro al pasar el mouse */
+    background-color: #003553; 
     transform: scale(1.05);
 }
 
 .btn-sesion:active {
-    background-color: #032030; /* Color más oscuro al presionar */
+    background-color: #032030; 
     transform: scale(0.95);
 }
 </style>
@@ -79,7 +78,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
                     </button>
                     <!--Inicio del logo -->
                     <div class="logo-nav">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="images/logo.png" alt="Logo del voluntariado"/>
                         </a>
                     </div>
@@ -95,8 +94,8 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
                             <li><a href="#blog">Proyectos</a></li>
                             <li><a href="#contact">Contactos</a></li>
                             <button class="btn-sesion" onclick="window.location.href='<?php echo $botonEnlace; ?>'">
-    <?php echo $botonTexto; ?>
-</button>
+                                <?php echo $botonTexto; ?>
+                            </button>
                         </ul>
                     </div>
                 </div>
@@ -117,7 +116,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
                             <a href="#works" class="middle btn btn-white">Ver Más...</a>
                         </div>
                     </div>
-                    <img src="./images/slider/1.jpg" alt="capacitacion uno"/>
+                    <img src="./images/slider/1.jpg"/>
                 </li>
                 <li class="secondary">
                     <div class="slider-text-wrapper">
@@ -127,7 +126,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
                             <a href="#works" class=" middle btn btn-white">Ver Más...</a>
                         </div>
                     </div>
-                    <img src="./images/slider/2.jpg" alt="capacitacion dos"/>
+                    <img src="./images/slider/2.jpg"/>
                 </li>
                 <li class="third">
                     <div class="slider-text-wrapper">
@@ -137,7 +136,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
                             <a href="#works" class="middle btn btn-white">Ver Más...</a>
                         </div>
                     </div>
-                    <img src="./images/slider/3.jpg" alt="capacitacion tres"/>
+                    <img src="./images/slider/3.jpg"/>
                 </li>
             </ul>
         </div>
@@ -1514,22 +1513,22 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
                 <form method="post">
                     <div class="row">
                         <div class="col-md-4">
-                            <input type="text" name="documento" class="form-control" id="documento" placeholder="DNI">
+                            <input type="text" name="documento" class="form-control" id="documento" placeholder="DNI" required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" id="nombres" name="nombres" placeholder="Nombres" type="text">
+                            <input class="form-control" id="nombres" name="nombres" placeholder="Nombres" type="text" required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" id="apellidoPaterno" name="apellidoPaterno" placeholder="Apellidos" type="text">
+                            <input class="form-control" id="apellidoPaterno" name="apellidoPaterno" placeholder="Apellidos" type="text" required>
                         </div>
                         <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electronico">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electronico" required>
                         </div>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" required>
                         </div>
                         <div class="col-md-12">
-                            <textarea class="form-control" id="mensaje" rows="7" placeholder="Escribe tu mensaje"></textarea>
+                            <textarea class="form-control" id="mensaje" rows="7" placeholder="Escribe tu mensaje" required></textarea>
                         </div>
                         <div class="col-md-12 text-right">
                             <button type="submit" class="btn btn-green">Enviar</button>

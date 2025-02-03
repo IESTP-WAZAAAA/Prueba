@@ -5,8 +5,8 @@
 
 
  $(window).load(function() {
-	$(".loader-item").delay(500).fadeOut();
-	$("#pageloader").delay(1000).fadeOut("slow");
+	$(".loader-item").delay(1000).fadeOut();
+	$("#pageloader").delay(2000).fadeOut("slow");
 	});
 
 
