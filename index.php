@@ -9,7 +9,6 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
 }
 $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
 ?>
-
 <!doctype html>
 <html lang="en-gb" class="no-js">
 <head>
@@ -55,7 +54,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
     transform: scale(0.95);
 }
 </style>
-
 <body data-spy="scroll" data-target="#main-menu">
     <!--Animación de carga -->
     <div id="pageloader">
@@ -92,10 +90,10 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                     <div class="clear-toggle"></div>
                     <div id="main-menu" class="collapse scroll navbar-right">
                         <ul class="nav">
-                            <li><a href="#about">Nosotros</a> </li>
-                            <li><a href="#history">Historia</a> </li>
+                            <li><a href="#about">Nosotros</a></li>
+                            <li><a href="#history">Historia</a></li>
                             <li><a href="#works">Nuestros Trabajos</a></li>
-                            <li><a href="#services">Servicios</a> </li>
+                            <li><a href="#services">Servicios</a></li>
                             <li><a href="#blog">Proyectos</a></li>
                             <li><a href="#contact">Contactos</a></li>
                             <button class="btn-sesion" onclick="window.location.href='<?php echo $botonEnlace; ?>'">
@@ -455,13 +453,11 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                                 </div>
                                             </div>
                                             <!--End Features Left-->
-
                                             <!--Start Features Image-->
                                             <div class="col-md-4 hidden-xs m-bot-30">
                                                 <img src="images/device.png" alt="Features Image" />
                                             </div>
                                             <!--End Features Image-->
-
                                             <!--Start Features Right-->
                                             <div class="col-md-4">
                                                 <div class="features-right m-bot-30">
@@ -476,7 +472,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                                                 de éxito.</p>
                                                         </div>
                                                     </div>
-
                                                     <!--Features Item #2-->
                                                     <div class="features-item">
                                                         <div class="features-icon"> <i class="fa fa-search-plus"></i>
@@ -502,15 +497,11 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                             </div>
                                             <!--End Features Right -->
                                         </div>
-
                                     </div>
                                     <div class="tab-pane" id="tab-content-5">
-
                                         <div class="tab-content-5">
-
                                             <div class="col-md-6">
                                                 <div class="core-features">
-
                                                     <p>Formar un grupo de jóvenes voluntarios que trabajen de manera
                                                         colaborativa en proyectos que busquen mejorar la sociedad y
                                                         comunidad empresarial.</p>
@@ -530,7 +521,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                                         <li>Facilitar el acceso a recursos y herramientas para
                                                             emprendedores que busquen mejorar sus proyectos.</li>
                                                     </ul>
-
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -538,7 +528,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                                     <img src="images/device-desktop.png" alt="" />
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -550,7 +539,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
         </div>
     </section>
     <!--End Section-->
-    
     <!--inicio de la sección de historia-->
     <section id="history" class="section parallax">
         <div class="overlay"></div>
@@ -587,7 +575,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                     <span> 10 OCT 2015</span>
                 </li>
                 <!-- End Item -->
-
                 <!--History Item -->
                 <li class="timeline-item">
                     <h4>Lorem ipsum dolor consectetur adipisicing.</h4>
@@ -596,7 +583,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                     <span> 11 OCT 2014</span>
                 </li>
                 <!-- End Item -->
-
                 <!--History Item -->
                 <li class="timeline-item">
                     <h4>Lorem ipsum dolor consectetur adipisicing.</h4>
@@ -605,17 +591,13 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                     <span> 18 OCT 2015</span>
                 </li>
                 <!-- End Item -->
-
                 <li class="clear"></li>
-
                 <li class="end-icon fa fa-bookmark"></li>
             </ul>
             <!-- End History Timeline -->
-
         </div> 
     </section>
     <!--Fin de la sección de historia-->
-
 
     <!-- Inicio del portafoleo-->
     <section id="works" class="section">
@@ -623,8 +605,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
         <div class="title-box text-center">
             <h2 class="title">Nuestros Trabajos</h2>
         </div>
-
-
         <div class=" col-md-12 text-center">
             <!-- Filtering -->
             <ul class="filtering">
@@ -635,7 +615,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                 <li class="filter" data-filter="corporate">Comunitario</li>
             </ul>
         </div>
-
         <div class="work-main">
             <!-- Work Grid -->
             <ul class="work-grid">
@@ -643,83 +622,69 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                 <li class="work-item thumnail-img mix corporate">
                     <div class="work-image">
                         <img src="images/works/img1.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
                                 <i class="fa fa-link"></i>
                             </a>
-
                             <a href="images/works/img1.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <!--End link-->
-
                         <!--Hover Caption-->
                         <div class="work-caption">
                             <h4>Project Title</h4>
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-
                     </div> <!-- /.work-image-->
                 </li>
                 <!--End Work Item -->
-
                 <!-- Work Item -->
                 <li class="work-item thumnail-img mix fashion wedding">
                     <div class="work-image">
                         <img src="images/works/img2.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
                                 <i class="fa fa-link"></i>
                             </a>
-
                             <a href="images/works/img2.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <!--End link-->
-
                         <!--Hover Caption-->
                         <div class="work-caption">
                             <h4>Project Title</h4>
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-
-                    </div> <!-- /.work-image-->
+                    </div>
                 </li>
                 <!--End Work Item -->
-
                 <!-- Work Item -->
                 <li class="work-item thumnail-img mix corporate">
                     <div class="work-image">
                         <img src="images/works/img3.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
                                 <i class="fa fa-link"></i>
                             </a>
-
                             <a href="images/works/img3.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <!--End link-->
-
                         <!--Hover Caption-->
                         <div class="work-caption">
                             <h4>Project Title</h4>
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-
-                    </div> <!-- /.work-image-->
+                    </div> 
                 </li>
                 <!--End Work Item -->
 
@@ -727,7 +692,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                 <li class="work-item thumnail-img mix corporate">
                     <div class="work-image">
                         <img src="images/works/img4.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
@@ -747,7 +711,7 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                         </div>
                         <!--End Caption-->
 
-                    </div> <!-- /.work-image-->
+                    </div>
                 </li>
                 <!--End Work Item -->
 
@@ -774,8 +738,7 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-
-                    </div> <!-- /.work-image-->
+                    </div> 
                 </li>
                 <!--End Work Item -->
 
@@ -783,27 +746,23 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                 <li class="work-item thumnail-img mix event wedding">
                     <div class="work-image">
                         <img src="images/works/img6.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
                                 <i class="fa fa-link"></i>
                             </a>
-
                             <a href="images/works/img6.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <!--End link-->
-
                         <!--Hover Caption-->
                         <div class="work-caption">
                             <h4>Project Title</h4>
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-
-                    </div> <!-- /.work-image-->
+                    </div>
                 </li>
                 <!--End Work Item -->
 
@@ -811,103 +770,85 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                 <li class="work-item thumnail-img mix event">
                     <div class="work-image">
                         <img src="images/works/img7.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
                                 <i class="fa fa-link"></i>
                             </a>
-
                             <a href="images/works/img7.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <!--End link-->
-
                         <!--Hover Caption-->
                         <div class="work-caption">
                             <h4>Project Title</h4>
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-
-                    </div> <!-- /.work-image-->
+                    </div> 
                 </li>
                 <!--End Work Item -->
-
                 <!-- Work Item -->
                 <li class="work-item thumnail-img mix corporate">
                     <div class="work-image">
                         <img src="images/works/img8.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
                                 <i class="fa fa-link"></i>
                             </a>
-
                             <a href="images/works/img8.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <!--End link-->
-
                         <!--Hover Caption-->
                         <div class="work-caption">
                             <h4>Project Title</h4>
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-
-                    </div> <!-- /.work-image-->
+                    </div>
                 </li>
                 <!--End Work Item -->
-
                 <!-- Work Item -->
                 <li class="work-item thumnail-img mix event">
                     <div class="work-image">
                         <img src="images/works/img9.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
                                 <i class="fa fa-link"></i>
                             </a>
-
                             <a href="images/works/img9.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <!--End link-->
-
                         <!--Hover Caption-->
                         <div class="work-caption">
                             <h4>Project Title</h4>
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-
-                    </div> <!-- /.work-image-->
+                    </div>
                 </li>
                 <!--End Work Item -->
-
                 <!-- Work Item -->
                 <li class="work-item thumnail-img mix wedding">
                     <div class="work-image">
                         <img src="images/works/img10.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
                                 <i class="fa fa-link"></i>
                             </a>
-
                             <a href="images/works/img10.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <!--End link-->
-
                         <!--Hover Caption-->
                         <div class="work-caption">
                             <h4>Project Title</h4>
@@ -1128,15 +1069,12 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                         </div>
                     </div>
                 </div>
-                <!--End services Item-->
-
-            </div> <!--/.row-->
-        </div> <!--/.container-->
+            </div>
+        </div> 
     </section>
-    <!--End Services-->
+    <!-- Fin de los servicios-->
 
-
-    <!--Start Why Choose us-->
+    <!-- Inicio de areas a cargo-->
     <section id="why-choose" class="section">
         <div class="container">
             <div class="row">
@@ -1272,24 +1210,19 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                         </div>
                     </div>
                 </div>
-                <!--End Accordion-->
-
-            </div> <!--/.row-->
-        </div> <!--/.container-->
+            </div>
+        </div> 
     </section>
-    <!--End Why Choose us-->
+    <!-- Fin de Areas a cargo-->
 
-
-    <!--Start video-->
+    <!-- Inicio del video-->
     <section id="video" class="section parallax">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-
                 <div class="title-box text-center white">
                     <h2 class="title">Publicidad</h2>
                 </div>
-
                 <div class="col-md-6">
                     <div class="video-caption-main">
                         <!--Video caption #1-->
@@ -1303,7 +1236,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                     laboredolore magna aliqua.</p>
                             </div>
                         </div>
-
                         <!--Video caption #2-->
                         <div class="video-caption">
                             <div class="video-icon">
@@ -1315,7 +1247,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                     laboredolore magna aliqua.</p>
                             </div>
                         </div>
-
                         <!--Video caption #3-->
                         <div class="video-caption">
                             <div class="video-icon">
@@ -1331,7 +1262,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                     </div>
                 </div>
                 <!-- End Video caption-->
-
                 <div class="col-md-6">
                     <div class="play-video">
                         <iframe
@@ -1339,13 +1269,12 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             allowfullscreen></iframe>
                     </div>
                 </div>
-
-            </div> <!-- /.row-->
-        </div> <!-- /.container-->
+            </div> 
+        </div>
     </section>
-    <!--End video-->
+    <!--Fin del video video-->
 
-    <!-- Start blog-->
+    <!-- Inicio del blog-->
     <section id="blog" class="section">
         <div class="container">
             <div class="row">
@@ -1411,13 +1340,10 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
     <section id="clients" class="section">
         <div class="container">
             <div class="row">
-
                 <div class="title-box text-center">
                     <h2 class="title">Patrocinadores</h2>
                 </div>
-
                 <div class="clients-carousel">
-
                     <!-- Patrocinador N°01-->
                     <div class="item">
                         <a href="#">
@@ -1426,7 +1352,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             </figure>
                         </a>
                     </div>
-
                     <!-- Clients Logo Item-->
                     <div class="item">
                         <a href="#">
@@ -1435,7 +1360,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             </figure>
                         </a>
                     </div>
-
                     <!-- Clients Logo Item-->
                     <div class="item">
                         <a href="#">
@@ -1444,7 +1368,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             </figure>
                         </a>
                     </div>
-
                     <!-- Clients Logo Item-->
                     <div class="item">
                         <a href="#">
@@ -1453,7 +1376,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             </figure>
                         </a>
                     </div>
-
                     <!-- Clients Logo Item-->
                     <div class="item">
                         <a href="#">
@@ -1462,7 +1384,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             </figure>
                         </a>
                     </div>
-
                     <!-- Clients Logo Item-->
                     <div class="item">
                         <a href="#">
@@ -1471,7 +1392,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             </figure>
                         </a>
                     </div>
-
                     <!-- Clients Logo Item-->
                     <div class="item">
                         <a href="#">
@@ -1480,7 +1400,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             </figure>
                         </a>
                     </div>
-
                     <!-- Clients Logo Item-->
                     <div class="item">
                         <a href="#">
@@ -1490,31 +1409,27 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                         </a>
                     </div>
                 </div>
-            </div> <!--/.row-->
-        </div> <!--/.container-->
+            </div>
+        </div>
     </section>
     <!--End clients-->
 
-    <!--Start Contact-->
+    <!-- Inicio de contactos-->
     <section id="contact" class="section parallax">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
-
                 <div class="title-box text-center white">
                     <h2 class="title">Contactos</h2>
                 </div>
             </div>
-
             <!--Inicio de contactos-->
             <div class="col-md-8 col-md-offset-2 contact-form">
-
                 <div class="contact-info text-center">
                     <p>📞 944 688 913</p>
                     <p>🏰​ Jr. Gamarra 432, 4to piso (Entra por la notaría León de la Cruz y sube directo por las escaleras) </p>
                     <p>📧​ jovenesporunnuevomundo@gmail.com</p>
                 </div>
-
                 <form method="post">
                     <div class="row">
                         <div class="col-md-4">
