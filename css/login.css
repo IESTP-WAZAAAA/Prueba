@@ -2,7 +2,7 @@
 
 :root {
     --mainColor: rgb(65, 62, 223);
-    --black: linear-gradient(135deg, #002F4B, #00A896, #D4F1F4);
+    --black: #000;
     --white: #FFFFFF;
     --whiteSmoke: #C4C3CA;
     --shadow: 0px 4px 8px 0 rgba(21, 21, 21, .2);

@@ -7,6 +7,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
     $botonTexto = 'Iniciar sesión';
     $botonEnlace = './login.html';
 }
+$nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
 ?>
 
 <!doctype html>
@@ -63,7 +64,11 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
         </div>
     </div>
     <!--Fin de animación de carga -->
-
+    <?php if (isset($_GET['bienvenido'])): ?>
+        <script>
+            alert("Bienvenid@, <?php echo $nombreUsuario; ?>");
+        </script>
+    <?php endif; ?>
     <!--Inicio de la navegación-->
     <header id="header">
         <div class="container">
@@ -1546,7 +1551,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
                 <!-- Incio de copyright-->
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="copyright">
-                        <p>Copyright © 2025 Todos los derechos reservados: <a href="#">Jhon Lozada Huamán</a>
+                        <p>Copyright © 2025 Todos los derechos reservados: <a href="https://www.facebook.com/profile.php?id=100082972283962&locale=es_LA"> Jhon Lozada Huamán</a>
                         </p>
                     </div>
                 </div>
@@ -1556,10 +1561,9 @@ if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="social-icons">
                         <ul>
-                            <li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
-                            <li><a class="google-plus" href="#"><i class="fab fa-google-plus"></i></a></li>
+                        <li><a class="facebook" href="https://www.facebook.com/share/1BcGSGbqQF/ "><i class="fab fa-facebook"></i></a></li>
+                        <li><a class="instagram" href="https://www.instagram.com/jovenes_por_un_nuevo_mundo?igsh=MWEyZnlpc3Z2NjJqOA== "><i class="fab fa-instagram"></i></a></li>
+                        <li><a class="tiktok" href="https://www.tiktok.com/@jovenesporunnuevomundo?_t=ZM-8tJHOF7mDcE&_r=1 "><i class="fab fa-tiktok"></i></a></li>
                         </ul>
                     </div>
                 </div>

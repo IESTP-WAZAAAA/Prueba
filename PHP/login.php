@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['usuario'];
     $contraseña = $_POST['contraseña'];
 
-    $stmt = $conn->prepare("SELECT id, usuario, contraseña FROM personas WHERE usuario = ?");
+    $stmt = $conn->prepare("SELECT id, usuario, nombres, contraseña FROM personas WHERE usuario = ?");
     $stmt->bind_param("s", $usuario);
     $stmt->execute();
     $resultado = $stmt->get_result();
@@ -25,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fila = $resultado->fetch_assoc();
         if (password_verify($contraseña, $fila['contraseña'])) {
             $_SESSION['usuario'] = $fila['usuario'];
-            header("Location: ../index.php");
+            $_SESSION['nombres'] = $fila['nombres']; 
+            header("Location: ../index.php?bienvenido=1");
             exit();
         } else {
             echo "<script>alert('Usuario o contraseña incorrectos'); history.back();</script>";
