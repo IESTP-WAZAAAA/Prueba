@@ -34,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "<script>alert('Usuario o contraseña incorrectos'); history.back();</script>";
     }
-    
     $stmt->close();
     $conn->close();
 }

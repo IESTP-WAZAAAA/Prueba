@@ -1,14 +1,74 @@
 <?php
 session_start();
 if (isset($_SESSION['usuario']) && $_SESSION['usuario'] !== 'invitado') {
-    $botonTexto = 'Cerrar sesión';
+    $botonTexto = 'Cerrar Sesión';
     $botonEnlace = './PHP/logout.php';
 } else {
-    $botonTexto = 'Iniciar sesión';
+    $botonTexto = 'Iniciar Sesión';
     $botonEnlace = './login.html';
 }
+
 $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
+
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$dbname = 'jovenes';
+
+$conn = new mysqli($host, $user, $password, $dbname);
+
+if ($conn->connect_error) {
+    echo json_encode(["status" => "error", "message" => "Conexión fallida: " . $conn->connect_error]);
+    exit;
+}
+
+// Verifica si el usuario ha iniciado sesión o es invitado
+$esInvitado = !isset($_SESSION['usuario']) || $_SESSION['usuario'] === 'invitado';
+
+// Definir valores predeterminados
+$documento = $nombres = $apellidoPaterno = "";
+$atributoDeshabilitado = "disabled"; // Bloquea los campos por defecto
+
+// Configurar texto y enlace del botón según el estado del usuario
+if ($esInvitado) {
+    $botonTexto = 'Iniciar Sesión';
+    $botonEnlace = './login.html';
+    $botonEnviarTexto = "Primero inicia sesión";
+    $botonEnviarDeshabilitado = "disabled";
+} else {
+    $botonTexto = 'Cerrar Sesión';
+    $botonEnlace = './PHP/logout.php';
+    $botonEnviarTexto = "Enviar";
+    $botonEnviarDeshabilitado = "";
+}
+
+// Mostrar nombre del usuario si está registrado
+$nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
+
+// Si el usuario ha iniciado sesión, obtener sus datos de la base de datos
+if (!$esInvitado) {
+    $usuario = $_SESSION['usuario'];
+    $stmt = $conn->prepare("SELECT documento, nombres, apellidoPaterno FROM personas WHERE usuario = ?");
+    
+    if ($stmt) {
+        $stmt->bind_param("s", $usuario);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+
+        if ($resultado->num_rows > 0) {
+            $fila = $resultado->fetch_assoc();
+            $documento = $fila['documento'];
+            $nombres = $fila['nombres'];
+            $apellidoPaterno = $fila['apellidoPaterno'];
+            $atributoDeshabilitado = "disabled"; // Bloquea los campos para usuarios registrados
+        }
+
+        $stmt->close();
+    }
+}
+$conn->close();
 ?>
+
 <!doctype html>
 <html lang="en-gb" class="no-js">
 <head>
@@ -42,17 +102,30 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s, transform 0.2s;
-}
+    }
 
-.btn-sesion:hover {
+    .btn-sesion:hover {
     background-color: #003553; 
     transform: scale(1.05);
-}
+    }
 
-.btn-sesion:active {
+    .btn-sesion:active {
     background-color: #032030; 
     transform: scale(0.95);
-}
+
+    .btn {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn-green { background-color: #28a745; color: white; }
+        .btn-red { background-color: #dc3545; color: white; }
+        .disabled { background-color: #ccc; cursor: not-allowed; }
+    }
 </style>
 <body data-spy="scroll" data-target="#main-menu">
     <!--Animación de carga -->
@@ -64,7 +137,7 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
     <!--Fin de animación de carga -->
     <?php if (isset($_GET['bienvenido'])): ?>
         <script>
-            alert("Bienvenid@, <?php echo $nombreUsuario; ?>");
+            alert("¡BIENVENID@, <?php echo $nombreUsuario; ?>");
         </script>
     <?php endif; ?>
     <!--Inicio de la navegación-->
@@ -244,7 +317,7 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                 <!-- Start Item-->
                 <div class="col-md-3 col-sm-6 facts-box margin-bottom-30">
                     <span><i class="icon-happy"></i></span>
-                    <h3>67</h3>
+                    <h3>76</h3>
                     <span>Clientes Satisfechos</span>
                 </div>
                 <!-- End Item-->
@@ -272,9 +345,8 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                     <span>Colaboradores</span>
                 </div>
                 <!-- End Item-->
-
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
+            </div>
+        </div>
     </section>
     <!--End Facts-->
 
@@ -427,7 +499,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                                                 desarrollo empresarial con el impacto social</p>
                                                         </div>
                                                     </div>
-
                                                     <!--Features Item #2-->
                                                     <div class="features-item">
                                                         <div class="features-icon"> <i class="fa fa-trophy"></i> </div>
@@ -438,7 +509,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                                                 habilidades blandas</p>
                                                         </div>
                                                     </div>
-
                                                     <!--Features Item #3-->
                                                     <div class="features-item">
                                                         <div class="features-icon"> <i class="fa fa-tag"></i> </div>
@@ -710,7 +780,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-
                     </div>
                 </li>
                 <!--End Work Item -->
@@ -719,19 +788,16 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                 <li class="work-item thumnail-img mix fashion wedding">
                     <div class="work-image">
                         <img src="images/works/img5.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
                                 <i class="fa fa-link"></i>
                             </a>
-
                             <a href="images/works/img5.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <!--End link-->
-
                         <!--Hover Caption-->
                         <div class="work-caption">
                             <h4>Project Title</h4>
@@ -931,7 +997,7 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
         </div>
     </section>
     <!--End Call To Action-->
-<br><br><br><br><br>
+    <br><br><br><br><br>
     <!--Start Skills-->
     <section id="skills" class="section parallax">
         <div class="overlay"></div>
@@ -1078,11 +1144,9 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
     <section id="why-choose" class="section">
         <div class="container">
             <div class="row">
-
                 <div class="title-box text-center">
                     <h2 class="title">Nuestras Áreas a Cargo</h2>
                 </div>
-
                 <!--start tabs-->
                 <div class="col-md-6">
                     <div class="tabs tabs-main">
@@ -1092,7 +1156,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                             <li><a href="#three" data-toggle="tab">MARKETING</a></li>
                         </ul>
                         <div class="tab-content">
-
                             <!--Start Tab Item #1 -->
                             <div class="tab-pane in active" id="one">
                                 <p>
@@ -1103,7 +1166,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                 </p>
                             </div>
                             <!-- End Tab -->
-
                             <!--Start Tab Item #2 -->
                             <div class="tab-pane" id="two">
                                 <p>
@@ -1115,7 +1177,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                 </p>
                             </div>
                             <!-- End Tab -->
-
                             <!--Start Tab Item #3 -->
                             <div class="tab-pane" id="three">
                                 <p>
@@ -1126,7 +1187,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                                 </p>
                             </div>
                             <!-- End Tab -->
-
                         </div>
                     </div>
                 </div>
@@ -1287,7 +1347,7 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                 <div class="col-md-4">
                     <div class="blog-post">
                         <div class="post-media">
-                            <img src="images/blog/blog1.jpg" alt="">
+                            <img src="images/blog/blog3.jpg" alt="">
                         </div>
                         <div class="post-desc">
                             <h4>consectetur adipisicing Inventore</h4>
@@ -1335,7 +1395,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
         </div> 
     </section>
     <!-- Fin del blog-->
-
     <!--Start clients-->
     <section id="clients" class="section">
         <div class="container">
@@ -1413,7 +1472,6 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
         </div>
     </section>
     <!--End clients-->
-
     <!-- Inicio de contactos-->
     <section id="contact" class="section parallax">
         <div class="overlay"></div>
@@ -1430,33 +1488,44 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                     <p>🏰​ Jr. Gamarra 432, 4to piso (Entra por la notaría León de la Cruz y sube directo por las escaleras) </p>
                     <p>📧​ jovenesporunnuevomundo@gmail.com</p>
                 </div>
-                <form method="post">
+                <form action="" method="post">
                     <div class="row">
                         <div class="col-md-4">
-                            <input type="text" name="documento" class="form-control" id="documento" placeholder="DNI" required>
+                            <input type="text" name="documento" class="form-control" id="documento" value="<?php echo $documento; ?>" placeholder="DNI" <?php echo $atributoDeshabilitado; ?> required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" id="nombres" name="nombres" placeholder="Nombres" type="text" required>
+                            <input class="form-control" id="nombres" name="nombres" value="<?php echo $nombres; ?>" placeholder="Nombres" type="text" <?php echo $atributoDeshabilitado; ?> required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" id="apellidoPaterno" name="apellidoPaterno" placeholder="Apellidos" type="text" required>
+                            <input class="form-control" id="apellidoPaterno" name="apellidoPaterno" value="<?php echo $apellidoPaterno; ?>" placeholder="Apellidos" type="text" <?php echo $atributoDeshabilitado; ?> required>
                         </div>
                         <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electronico" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electrónico" required>
                         </div>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" required>
+                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" required>
                         </div>
                         <div class="col-md-12">
                             <textarea class="form-control" id="mensaje" rows="7" placeholder="Escribe tu mensaje" required></textarea>
                         </div>
                         <div class="col-md-12 text-right">
-                            <button type="submit" class="btn btn-green">Enviar</button>
-                        </div>
+                        <button type="submit" class="btn btn-green" <?php echo $botonEnviarDeshabilitado; ?>>
+                            <?php echo $botonEnviarTexto; ?>
+                        </button>
+                    </div>
                     </div>
                 </form>
+    <script>
+        // Bloquear todos los campos si el usuario es invitado
+        let esInvitado = <?php echo json_encode($esInvitado); ?>;
+        if (esInvitado) {
+            document.querySelectorAll("input, textarea").forEach(elemento => {
+                elemento.setAttribute("disabled", "disabled");
+                elemento.classList.add("disabled");
+            });
+        }
+    </script>
             </div>
-            <!--Fin de contactos-->
         </div> 
     </section>
     <!--Inicio de pie de pagina-->
@@ -1472,7 +1541,7 @@ $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
                 </div>
                 <!-- Fin del copyright-->
 
-                <!-- Iconos-->
+                <!-- Iconos de redes sociales-->
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="social-icons">
                         <ul>
