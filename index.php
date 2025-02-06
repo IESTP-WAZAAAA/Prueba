@@ -227,9 +227,8 @@ $conn->close();
                             <i class="fa fa-leaf"></i>
                         </div>
                         <div class="features-info">
-                            <h4>Clean & Modern Design</h4>
-                            <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt
-                                laboredolore magna aliqua.</p>
+                            <h4>Compromiso con el cambio</h4>
+                            <p>Adoptamos una actitud proactiva hacia la innovación y la mejora continua, enfrentando los desafíos con determinación para alcanzar un impacto positivo.</p>
                         </div>
                     </div>
                 </div>
@@ -240,9 +239,8 @@ $conn->close();
                             <i class="fa fa-paper-plane"></i>
                         </div>
                         <div class="features-info">
-                            <h4>Illustration</h4>
-                            <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt
-                                laboredolore magna aliqua.</p>
+                            <h4>Trabajo en equipo</h4>
+                            <p>Fomentamos un ambiente colaborativo donde el esfuerzo colectivo y el respeto mutuo generan resultados extraordinarios.</p>
                         </div>
                     </div>
                 </div>
@@ -253,48 +251,8 @@ $conn->close();
                             <i class="fa fa-life-saver"></i>
                         </div>
                         <div class="features-info">
-                            <h4>App Development</h4>
-                            <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt
-                                laboredolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Features Icon-->
-                <div class="col-md-4">
-                    <div class="features-icon-box">
-                        <div class="features-icon">
-                            <i class="fa fa-paint-brush"></i>
-                        </div>
-                        <div class="features-info">
-                            <h4>Web Development</h4>
-                            <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt
-                                laboredolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Features Icon-->
-                <div class="col-md-4">
-                    <div class="features-icon-box">
-                        <div class="features-icon">
-                            <i class="fa fa-line-chart"></i>
-                        </div>
-                        <div class="features-info">
-                            <h4>Digital Design</h4>
-                            <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt
-                                laboredolore magna aliqua.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Features Icon-->
-                <div class="col-md-4">
-                    <div class="features-icon-box">
-                        <div class="features-icon">
-                            <i class="fa fa-gift"></i>
-                        </div>
-                        <div class="features-info">
-                            <h4>Fully Responsive</h4>
-                            <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt
-                                laboredolore magna aliqua.</p>
+                            <h4>Transparencia</h4>
+                            <p>Actuamos con honestidad y claridad en cada acción, promoviendo la confianza y la credibilidad en nuestras relaciones.</p>
                         </div>
                     </div>
                 </div>
@@ -998,46 +956,40 @@ $conn->close();
             <div class="row">
 
                 <div class="title-box text-center white">
-                    <h2 class="title">Technical Skills</h2>
+                    <h2 class="title">Beneficios del voluntariado</h2>
                 </div>
-
                 <!--Skill #1-->
                 <div class="col-sm-3 col-md-3 col-lg-3 pie-chart-main">
                     <span class="pie-chart " data-percent="85">
                         <span class="percent"></span>
                     </span>
-                    <h4>Photoshop</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4>Constantes capacitaciones</h4>
+                    <p>Formación continua para mejorar habilidades.</p>
                 </div>
-
                 <!--Skill #2-->
                 <div class="col-sm-3 col-md-3 col-lg-3 pie-chart-main">
                     <span class="pie-chart" data-percent="75">
                         <span class="percent"></span>
                     </span>
-                    <h4>Wordpress</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4>Mayor red de contactos y oportunidades</h4>
+                    <p>Expande conexiones y opciones laborales.</p>
                 </div>
-
                 <!--Skill #3-->
                 <div class="col-sm-3 col-md-3 col-lg-3 pie-chart-main">
                     <span class="pie-chart " data-percent="60">
                         <span class="percent"></span>
                     </span>
-                    <h4>Graphic</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4>Participación en proyectos</h4>
+                    <p>Involucramiento en iniciativas de impacto.</p>
                 </div>
-
                 <!--Skill #4-->
                 <div class="col-sm-3 col-md-3 col-lg-3 pie-chart-main">
                     <span class="pie-chart" data-percent="95">
                         <span class="percent"></span>
                     </span>
-                    <h4>Development</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4>Certificado de prácticas pre-profesionales</h4>
+                    <p>Acredita experiencia y mejora empleabilidad.</p>
                 </div>
-
-
             </div>
         </div>
     </section>
