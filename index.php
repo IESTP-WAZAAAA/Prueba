@@ -570,47 +570,44 @@ $conn->close();
             </div>
             <!-- History Timeline -->
             <ul class="timeline list-unstyled">
-                <li class="year">2014</li>
+                <li class="year">1</li>
                 <!--History Item -->
                 <li class="timeline-item">
-                    <h4>Lorem ipsum dolor consectetur adipisicing.</h4>
-                    <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt laboredolore magna
-                        aliqua.</p>
-                    <span> 16 OCT 2014</span>
+                    <h4>Idea de responsabilidad social</h4>
+                    <p>
+                        En este año, el Lic. Amado Lopez tuvo una idea de fundar un voluntariado con un enfoque social-empresarial.
+                    </p>
+                    <span> 12 Agos. 2020</span>
                 </li>
                 <!-- End Item -->
                 <!--History Item -->
                 <li class="timeline-item">
-                    <h4>Lorem ipsum dolor consectetur adipisicing.</h4>
-                    <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt laboredolore magna
-                        aliqua.</p>
-                    <span> 18 OCT 2014</span>
+                    <h4>Primera Convocatoria</h4>
+                    <p>Se llevó a cabo la 1era Convocatoria para atraer a jóvenes voluntarios dispuestos a ayudar y orientar a emprendedores.</p>
+                    <span> 18 Oct. 2023</span>
                 </li>
                 <!-- End Item -->
                 <!-- History Year -->
-                <li class="year">2015</li>
+                <li class="year">2</li>
                 <!--History Item -->
                 <li class="timeline-item">
-                    <h4>Lorem ipsum dolor consectetur adipisicing.</h4>
-                    <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt laboredolore magna
-                        aliqua.</p>
-                    <span> 10 OCT 2015</span>
+                    <h4>Primera actividad de integranción</h4>
+                    <p>Se realizó una bicicleteada al bosque Cañoncillo, en donde los jóvenes se conocieron y se integraron por primera vez.</p>
+                    <span> 10 Dic. 2023</span>
                 </li>
                 <!-- End Item -->
                 <!--History Item -->
                 <li class="timeline-item">
-                    <h4>Lorem ipsum dolor consectetur adipisicing.</h4>
-                    <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt laboredolore magna
-                        aliqua.</p>
-                    <span> 11 OCT 2014</span>
+                    <h4>Reactivación del voluntariado</h4>
+                    <p>Después de un tiempo de pausa, "Jóvenes por un Nuevo Mundo" vuelve con más fuerza que nunca. Un grupo de jóvenes comprometidos con el cambio se une para impulsar proyectos con impacto social y empresarial.</p>
+                    <span> 3 Ene.2025</span>
                 </li>
                 <!-- End Item -->
                 <!--History Item -->
                 <li class="timeline-item">
-                    <h4>Lorem ipsum dolor consectetur adipisicing.</h4>
-                    <p>Lorem ipsum dolor consectetur adipisicing incididunt eiusmod tempor incididunt laboredolore magna
-                        aliqua.</p>
-                    <span> 18 OCT 2015</span>
+                    <h4>Inicio de actividades</h4>
+                    <p>La jornada arranca con una charla inspiradora que motiva a los voluntarios a comprometerse con el cambio, seguida de asesoramientos personalizados para guiarlos en sus proyectos que ayudan a los emprendedores.</p>
+                    <span> 7 Febr. 2025</span>
                 </li>
                 <!-- End Item -->
                 <li class="clear"></li>
@@ -1009,9 +1006,8 @@ $conn->close();
                     <div class="services-box">
                         <div class="services-icon"> <i class="icon-basket"></i> </div>
                         <div class="services-desc">
-                            <h4>Development</h4>
-                            <p>Lorem ipsum dolor consectetur dolor consectetur adipisicing incididunt eiusmod tempor
-                                incididunt laboredolore adipisicing. </p>
+                            <h4>Asesorías personalizadas</h4>
+                            <p>Sesiones de orientación adaptadas a las necesidades individuales para mejorar el aprendizaje y la toma de decisiones. </p>
                         </div>
                     </div>
                 </div>
@@ -1022,9 +1018,8 @@ $conn->close();
                     <div class="services-box">
                         <div class="services-icon"> <i class="icon-shield"></i> </div>
                         <div class="services-desc">
-                            <h4>Web Design</h4>
-                            <p>Lorem ipsum dolor consectetur dolor consectetur adipisicing incididunt eiusmod tempor
-                                incididunt laboredolore adipisicing. </p>
+                            <h4>Talleres express </h4>
+                            <p>Capacitaciones cortas y dinámicas enfocadas en adquirir habilidades prácticas en poco tiempo. </p>
                         </div>
                     </div>
                 </div>
@@ -1035,48 +1030,8 @@ $conn->close();
                     <div class="services-box">
                         <div class="services-icon"> <i class="icon-hotairballoon"></i> </div>
                         <div class="services-desc">
-                            <h4>SEO</h4>
-                            <p>Lorem ipsum dolor consectetur dolor consectetur adipisicing incididunt eiusmod tempor
-                                incididunt laboredolore adipisicing. </p>
-                        </div>
-                    </div>
-                </div>
-                <!--End services Item-->
-
-                <!--Services Item -->
-                <div class="col-md-4">
-                    <div class="services-box">
-                        <div class="services-icon"> <i class="icon-global"></i> </div>
-                        <div class="services-desc">
-                            <h4>Graphic Design</h4>
-                            <p>Lorem ipsum dolor consectetur dolor consectetur adipisicing incididunt eiusmod tempor
-                                incididunt laboredolore adipisicing. </p>
-                        </div>
-                    </div>
-                </div>
-                <!--End services Item-->
-
-                <!--Services Item-->
-                <div class="col-md-4">
-                    <div class="services-box">
-                        <div class="services-icon"> <i class="icon-target"></i> </div>
-                        <div class="services-desc">
-                            <h4>Content Writing</h4>
-                            <p>Lorem ipsum dolor consectetur dolor consectetur adipisicing incididunt eiusmod tempor
-                                incididunt laboredolore adipisicing. </p>
-                        </div>
-                    </div>
-                </div>
-                <!--End services Item-->
-
-                <!--Services Item -->
-                <div class="col-md-4">
-                    <div class="services-box">
-                        <div class="services-icon"> <i class="icon-aperture"></i> </div>
-                        <div class="services-desc">
-                            <h4>HTML Basic</h4>
-                            <p>Lorem ipsum dolor consectetur dolor consectetur adipisicing incididunt eiusmod tempor
-                                incididunt laboredolore adipisicing. </p>
+                            <h4>Actividades emprendedoras</h4>
+                            <p>Iniciativas diseñadas para fomentar la creatividad, el liderazgo y el desarrollo de proyectos de negocio. </p>
                         </div>
                     </div>
                 </div>
@@ -1360,7 +1315,7 @@ $conn->close();
                     <div class="item">
                         <a href="#">
                             <figure>
-                                <img src="images/clients-logo/client2.png" alt="" />
+                                <img src="images/clients-logo/cliente6.png" alt="" />
                             </figure>
                         </a>
                     </div>
