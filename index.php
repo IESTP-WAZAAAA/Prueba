@@ -78,10 +78,10 @@ $conn->close();
     <link href="js/owl-carousel/owl.theme.css" rel="stylesheet">
     <link href="js/owl-carousel/owl.transitions.css" rel="stylesheet">
     <link href="css/magnific-popup.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="shortcut icon" href="./images/icono.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/etlinefont.css">
-    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <style>
@@ -917,7 +917,7 @@ $conn->close();
                         </div>
                         <!--End Caption-->
 
-                    </div> <!-- /.work-image-->
+                    </div>
                 </li>
                 <!--End Work Item -->
 
@@ -944,8 +944,7 @@ $conn->close();
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-
-                    </div> <!-- /.work-image-->
+                    </div>
                 </li>
                 <!--End Work Item -->
 

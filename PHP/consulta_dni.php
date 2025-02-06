@@ -7,7 +7,6 @@ $dni = $_REQUEST['dni'];
 if (!preg_match('/^\d{8}$/', $dni)) {
     die(json_encode(['error' => 'El DNI no es válido.']));
 }
-
 // Se inicia la llamada a la API de la RENIEC
 $curl = curl_init();
 
