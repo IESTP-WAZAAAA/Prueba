@@ -19,6 +19,23 @@
         window.history.pushState(null, "", window.location.href);
     };
 </script>
+<style>
+        .input-icon {
+        position: absolute;
+        left: 10px;
+        color: gray;
+    }
+
+    .toggle-password {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+        color: gray;
+        transform: translateY(11px);
+
+    }
+    
+</style>
 
 <body>
     <nav class="navbar">
@@ -70,6 +87,7 @@
                                                 <input type="password" id="contraseña" name="contraseña"
                                                     class="form-style" placeholder="Contraseña" required>
                                                 <i class="input-icon material-icons">lock</i>
+                                                <i class="toggle-password material-icons" onclick="togglePassword()">visibility</i>
                                             </div>
                                             <button type="submit" class="btn" id="loginBtn">Ingresar</button>
                                         </div>
@@ -109,6 +127,7 @@
                                                 <input type="password" id="contraseña" name="contraseña"
                                                     class="form-style" placeholder="Contraseña" required>
                                                 <i class="input-icon material-icons">lock</i>
+                                                <i class="toggle-password material-icons" onclick="togglePassword()">visibility</i>
                                             </div>
                                             <button type="submit" class="btn">Registrar</button>
                                         </div>
@@ -175,4 +194,5 @@
             });
     });
 </script>
+<script src="js/contraseña.js"></script>
 </html>

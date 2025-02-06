@@ -123,13 +123,9 @@
       ],   
 
 	});
-	
-	
 /*------------------------------*/
 /*	 Single Work carousel
 /*------------------------------*/
-
-
      $("#single-work-slider").owlCarousel({
  
 		navigation : false, // Show next and prev buttons
@@ -146,11 +142,9 @@
  
 	});
 
-
 /*------------------------------*/
 /*	 Parallax
 /*------------------------------*/
-
 
 	$(window).bind('load', function() {
 		if(!onMobile)
@@ -174,11 +168,10 @@
 			onMobile = true;
 		}
 
-
 /*-----------------------------------------------------
     Scroll Menu BG
 -------------------------------------------------------*/
-  
+
      $(window).scroll(function () {
          if ($("#header").offset().top > 50) {
              $("#header").addClass("menu-bg");
@@ -187,12 +180,9 @@
          }
      });
 
-
-
 /*------------------------------*/
 /* Team Carousel
 /*------------------------------*/
-
 
 	$(".team-carousel").owlCarousel({
 	
@@ -215,11 +205,9 @@
 
 	});
 
-
 /*------------------------------*/
 /* Tab Carousel
 /*------------------------------*/
-
 
      $(".tab-carousel").owlCarousel({
  
@@ -233,27 +221,19 @@
       "<i class='fa fa-angle-left'></i>",
       "<i class='fa fa-angle-right'></i>"
       ] ,
-
- 
 	});
-
 
 /*------------------------------*/
 /* Mixitup portfolio
 /*------------------------------*/
 
-
    jQuery('.work-grid').mixitup({
 	targetSelector: '.mix',
 	});
 
-
-
-/*------------------------------*/
+/*-----------------------------*/
 /* Magnific popup
 /*------------------------------*/
-
-
 $('.popup-image').magnificPopup({
 		type: 'image',
 		closeOnContentClick: true,
@@ -264,12 +244,9 @@ $('.popup-image').magnificPopup({
 		
 	});
 
-
-
 /*------------------------------*/
 /* Clients Carousel
 /*------------------------------*/
-
 
 	 $('.clients-carousel').owlCarousel({
 	 autoPlay:3000,
@@ -281,12 +258,9 @@ $('.popup-image').magnificPopup({
 	  pagination:false,
 	});
 
-
-
 /*------------------------------*/
 /*  Smooth scroll
 /*------------------------------*/
-
 
       (function($) { "use strict";
 		$(".scroll a[href^='#']").on('click', function(e) {
@@ -300,8 +274,6 @@ $('.popup-image').magnificPopup({
 		$('.collapse ul li a').click(function(){ 
 		$('.navbar-toggle:visible').click();
 	   });	
-
-
 
 /*------------------------------*/
 /* Pie Chart
@@ -328,11 +300,10 @@ jQuery(document).on('appear', '.pie-chart',  function()  {
     });
 });
 
-
 /*------------------------------*/
 /*  Scroll to top
 /*------------------------------*/
-	 
+ 
 	$(window).scroll(function(){
                     if ($(this).scrollTop() > 100) {
                         $('.scrollup').fadeIn();
@@ -345,4 +316,3 @@ jQuery(document).on('appear', '.pie-chart',  function()  {
                     $("html, body").animate({ scrollTop: 0 }, 2000);
                     return false;
                 });
-   

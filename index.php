@@ -22,14 +22,11 @@ if ($conn->connect_error) {
     exit;
 }
 
-// Verifica si el usuario ha iniciado sesión o es invitado
 $esInvitado = !isset($_SESSION['usuario']) || $_SESSION['usuario'] === 'invitado';
 
-// Definir valores predeterminados
 $documento = $nombres = $apellidoPaterno = "";
-$atributoDeshabilitado = "disabled"; // Bloquea los campos por defecto
+$atributoDeshabilitado = "disabled";
 
-// Configurar texto y enlace del botón según el estado del usuario
 if ($esInvitado) {
     $botonTexto = 'Iniciar Sesión';
     $botonEnlace = './login.html';
@@ -42,10 +39,8 @@ if ($esInvitado) {
     $botonEnviarDeshabilitado = "";
 }
 
-// Mostrar nombre del usuario si está registrado
 $nombreUsuario = isset($_SESSION['nombres']) ? $_SESSION['nombres'] : "Usuario";
 
-// Si el usuario ha iniciado sesión, obtener sus datos de la base de datos
 if (!$esInvitado) {
     $usuario = $_SESSION['usuario'];
     $stmt = $conn->prepare("SELECT documento, nombres, apellidoPaterno FROM personas WHERE usuario = ?");
@@ -60,9 +55,8 @@ if (!$esInvitado) {
             $documento = $fila['documento'];
             $nombres = $fila['nombres'];
             $apellidoPaterno = $fila['apellidoPaterno'];
-            $atributoDeshabilitado = "disabled"; // Bloquea los campos para usuarios registrados
+            $atributoDeshabilitado = "disabled";
         }
-
         $stmt->close();
     }
 }
@@ -112,20 +106,21 @@ $conn->close();
     .btn-sesion:active {
     background-color: #032030; 
     transform: scale(0.95);
+    }
 
     .btn {
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .btn-green { background-color: #28a745; color: white; }
-        .btn-red { background-color: #dc3545; color: white; }
-        .disabled { background-color: #ccc; cursor: not-allowed; }
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
     }
+    .btn-green { background-color: #28a745; color: white; }
+    .btn-red { background-color: #dc3545; color: white; }
+    .disabled { background-color: #ccc; cursor: not-allowed; }
+    
 </style>
 <body data-spy="scroll" data-target="#main-menu">
     <!--Animación de carga -->
