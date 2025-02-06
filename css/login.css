@@ -210,7 +210,7 @@ input[type="checkbox"] { display: none; }
     box-shadow: var(--shadow);
 }
 
-    .form-style:focus, .form-style:active { border: none; outline: none; box-shadow: var(--shadow); }
+.form-style:focus, .form-style:active { border: none; outline: none; box-shadow: var(--shadow); }
 
 .input-icon {
     position: absolute;
@@ -223,7 +223,7 @@ input[type="checkbox"] { display: none; }
     transition: all .2s linear;
 }
 
-/*MEDIA QUERIES*/
+/* Diseño responsivo*/
 @media (max-width: 992px) {
     nav .menu-btn i { display: block; }
     nav .container { padding: 0; }
@@ -261,5 +261,4 @@ input[type="checkbox"] { display: none; }
     .left h2 { font-size: 28px; }
         .left h2 span { font-size: 30px; }
     .card-3d-wrap { width: 300px; }
-}                                         
-            
+}                                             

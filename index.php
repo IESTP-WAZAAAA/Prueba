@@ -25,13 +25,13 @@ if ($conn->connect_error) {
 $esInvitado = !isset($_SESSION['usuario']) || $_SESSION['usuario'] === 'invitado';
 
 $documento = $nombres = $apellidoPaterno = "";
-$atributoDeshabilitado = "disabled";
+$atributoDeshabilitado = "readonly";
 
 if ($esInvitado) {
     $botonTexto = 'Iniciar Sesión';
     $botonEnlace = './login.html';
     $botonEnviarTexto = "Primero inicia sesión";
-    $botonEnviarDeshabilitado = "disabled";
+    $botonEnviarDeshabilitado = "readonly";
 } else {
     $botonTexto = 'Cerrar Sesión';
     $botonEnlace = './PHP/logout.php';
@@ -55,7 +55,7 @@ if (!$esInvitado) {
             $documento = $fila['documento'];
             $nombres = $fila['nombres'];
             $apellidoPaterno = $fila['apellidoPaterno'];
-            $atributoDeshabilitado = "disabled";
+            $atributoDeshabilitado = "readonly";
         }
         $stmt->close();
     }
@@ -119,7 +119,6 @@ $conn->close();
     }
     .btn-green { background-color: #28a745; color: white; }
     .btn-red { background-color: #dc3545; color: white; }
-    .disabled { background-color: #ccc; cursor: not-allowed; }
     
 </style>
 <body data-spy="scroll" data-target="#main-menu">
@@ -212,7 +211,7 @@ $conn->close();
             </ul>
         </div>
     </section>
-    <br><br><br><br><br>
+    <br><br><br><br>
     <!-- Fin del carrusel  -->
     <div class="title-box text-center">
         <h2 class="title">Nuestros Valores</h2>
@@ -1514,8 +1513,8 @@ $conn->close();
         let esInvitado = <?php echo json_encode($esInvitado); ?>;
         if (esInvitado) {
             document.querySelectorAll("input, textarea").forEach(elemento => {
-                elemento.setAttribute("disabled", "disabled");
-                elemento.classList.add("disabled");
+                elemento.setAttribute("readonly", "readonly");
+                elemento.classList.add("redonly");
             });
         }
     </script>
