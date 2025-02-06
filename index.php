@@ -63,7 +63,7 @@ if (!$esInvitado) {
 $conn->close();
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-gb" class="no-js">
 <head>
     <meta charset="utf-8">
@@ -99,7 +99,7 @@ $conn->close();
     }
 
     .btn-sesion:hover {
-    background-color: #003553; 
+    background-color: #003553;
     transform: scale(1.05);
     }
 

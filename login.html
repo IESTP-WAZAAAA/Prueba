@@ -16,16 +16,15 @@
 <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function () {
-        window.history.pushState(null, "", window.location.href);
+    window.history.pushState(null, "", window.location.href);
     };
 </script>
 <style>
     .input-icon {
-    position: absolute;
-    left: 10px;
-    color: gray;
+        position: absolute;
+        left: 10px;
+        color: gray;
     }
-
     .toggle-password {
         position: absolute;
         right: 10px;
@@ -33,7 +32,6 @@
         color: gray;
         transform: translateY(11px);
     }
-    
 </style>
 
 <body>
@@ -45,17 +43,16 @@
             </div>
         </div>
     </nav>
-
     <section>
         <div class="container">
             <div class="row full-screen align-items-center">
                 <div class="left">
-                    <span class="line"></span>
-                    <h2>Bienvenidos a la página <br> de <span>Jovenes por un nuevo mundo!</span></h2>
+                    <span class="line"></span><span class="line"></span>
+
+                    <h2>Bienvenidos a la página de <span>Jovenes por un nuevo mundo!</span></h2>
                     <p>Registrate para ver toda la novedad de la pagina, y no te pierdas de ninguna actualización, o
                         ingresa como invitado</p>
-                        <a href="./PHP/invitado.php" class="btn">Ingresar como invitado</a>
-
+                    <a href="./PHP/invitado.php" class="btn">Ingresar como invitado</a>
                     <div class="social-media">
                         <a href="https://www.facebook.com/share/1BcGSGbqQF/ "><i
                                 class="fa-brands fa-facebook-f"></i></a>
@@ -86,7 +83,8 @@
                                                 <input type="password" id="contraseña" name="contraseña"
                                                     class="form-style" placeholder="Contraseña" required>
                                                 <i class="input-icon material-icons">lock</i>
-                                                <i class="toggle-password material-icons" onclick="togglePassword()">visibility</i>
+                                                <i class="toggle-password material-icons"
+                                                    onclick="togglePassword()">visibility</i>
                                             </div>
                                             <button type="submit" class="btn" id="loginBtn">Ingresar</button>
                                         </div>
@@ -126,7 +124,8 @@
                                                 <input type="password" id="contraseña" name="contraseña"
                                                     class="form-style" placeholder="Contraseña" required>
                                                 <i class="input-icon material-icons">lock</i>
-                                                <i class="toggle-password material-icons" onclick="togglePassword()">visibility</i>
+                                                <i class="toggle-password material-icons"
+                                                    onclick="togglePassword()">visibility</i>
                                             </div>
                                             <button type="submit" class="btn">Registrar</button>
                                         </div>
@@ -194,4 +193,5 @@
     });
 </script>
 <script src="js/contraseña.js"></script>
+
 </html>
