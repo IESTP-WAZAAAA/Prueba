@@ -16,7 +16,7 @@
 <script>
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function () {
-    window.history.pushState(null, "", window.location.href);
+        window.history.pushState(null, "", window.location.href);
     };
 </script>
 <style>
@@ -25,12 +25,49 @@
         left: 10px;
         color: gray;
     }
+
     .toggle-password {
         position: absolute;
         right: 10px;
         cursor: pointer;
         color: gray;
         transform: translateY(11px);
+    }
+
+    .campo-formulario {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: #2c2c2c;
+        border: 1px solid #3c3c3c;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .icono-input {
+        color: #a6a6a6;
+        margin-right: 10px;
+    }
+
+    .icono-ojo {
+        color: #a6a6a6;
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+    }
+
+    .input-estilo {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #e0e0e0;
+        font-size: 16px;
+    }
+
+    .input-estilo::placeholder {
+        color: #a6a6a6;
     }
 </style>
 
@@ -120,12 +157,12 @@
                                                 <i class="input-icon material-icons">perm_identity</i>
                                             </div>
                                             <!-- Contraseña -->
-                                            <div class="form-group">
-                                                <input type="password" id="contraseña" name="contraseña"
-                                                    class="form-style" placeholder="Contraseña" required>
-                                                <i class="input-icon material-icons">lock</i>
-                                                <i class="toggle-password material-icons"
-                                                    onclick="togglePassword()">visibility</i>
+                                            <div class="campo-formulario">
+                                                <i class="icono-input material-icons">lock</i>
+                                                <input type="password" id="clave_registro" name="clave"
+                                                    class="input-estilo" placeholder="Contraseña" required>
+                                                <i class="icono-ojo material-icons"
+                                                    onclick="alternarClave('clave_registro', this)">visibility</i>
                                             </div>
                                             <button type="submit" class="btn">Registrar</button>
                                         </div>
@@ -193,5 +230,6 @@
     });
 </script>
 <script src="js/contraseña.js"></script>
+<script src="js/registro.js"></script>
 
 </html>
