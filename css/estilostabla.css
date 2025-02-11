@@ -1,0 +1,89 @@
+
+/* Encabezado */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Tabla responsive */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Estilo de la tabla */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    min-width: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado de la tabla */
+.styled-table thead {
+    background-color: #032030;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Celdas de la tabla */
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Filas alternas */
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+/* Efecto al pasar el cursor */
+.styled-table tbody tr:hover {
+    background-color: #eacc6c;
+    color: #032030;
+}
+
+/* Botón de eliminar */
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .styled-table th, .styled-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .delete-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+.logout-btn {
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.logout-btn:hover {
+    background-color: #C9302C;
+}

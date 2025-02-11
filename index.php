@@ -118,8 +118,31 @@ $conn->close();
         margin-top: 10px;
     }
     .btn-green { background-color: #28a745; color: white; }
-    .btn-red { background-color: #dc3545; color: white; }
     
+    .input-alto {
+    height: 170px !important; 
+    padding-top: 10px; 
+    padding-left: 10px; 
+    vertical-align: top;
+    font-size: 16px;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+}
+
+.input-alto::placeholder {
+    position: absolute;
+    top: 10px;
+    color: #999;
+    font-size: 14px;
+}
+
+.input-alto:focus {
+    text-align: left;
+    vertical-align: top;
+}
+
 </style>
 <body data-spy="scroll" data-target="#main-menu">
     <!--Animación de carga -->
@@ -163,9 +186,9 @@ $conn->close();
                             <li><a href="#services">Servicios</a></li>
                             <li><a href="#blog">Proyectos</a></li>
                             <li><a href="#contact">Contactos</a></li>
-                            <button class="btn-sesion" onclick="window.location.href='<?php echo $botonEnlace; ?>'">
+                            <li><button class="btn-sesion" onclick="window.location.href='<?php echo $botonEnlace; ?>'">
                                 <?php echo $botonTexto; ?>
-                            </button>
+                            </button></li>
                         </ul>
                     </div>
                 </div>
@@ -643,7 +666,7 @@ $conn->close();
                         <img src="images/works/img1.jpg" alt="thumbnail">
                         <!--Hover link-->
                         <div class="hover-link">
-                            <a href="single-work.html">
+                            <a href="administración.php">
                                 <i class="fa fa-link"></i>
                             </a>
                             <a href="images/works/img1.jpg" class="popup-image">
@@ -1091,7 +1114,7 @@ $conn->close();
                     </div>
                 </div>
                 <!-- End Tabs-->
-
+<br><br>
                 <!--Start Accordion-->
                 <div class="col-md-6">
                     <div class="panel-group accordion-main" id="accordion">
@@ -1100,7 +1123,7 @@ $conn->close();
                             <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion"
                                 data-target="#collapseOne">
                                 <h6 class="panel-title accordion-toggle">
-                                    Photography
+                                    Administración
                                 </h6>
                             </div>
                             <div id="collapseOne" class="panel-collapse collapse">
@@ -1119,7 +1142,7 @@ $conn->close();
                             <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion"
                                 data-target="#collapseTwo">
                                 <h6 class="panel-title accordion-toggle">
-                                    Web Designing
+                                    Derecho
                                 </h6>
                             </div>
                             <div id="collapseTwo" class="panel-collapse collapse">
@@ -1137,7 +1160,7 @@ $conn->close();
                             <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion"
                                 data-target="#collapseThree">
                                 <h6 class="panel-title accordion-toggle">
-                                    Web Development
+                                    Contabilidad
                                 </h6>
                             </div>
                             <div id="collapseThree" class="panel-collapse collapse">
@@ -1147,24 +1170,6 @@ $conn->close();
                                         erat, facilisis ut venenatis eu, sodales vel dolor fusce diam ornare.
                                     </p>
 
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--About accordion #4-->
-                        <div class="panel">
-                            <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion"
-                                data-target="#collapseFour">
-                                <h6 class="panel-title accordion-toggle">
-                                    Responsive Design
-                                </h6>
-                            </div>
-                            <div id="collapseFour" class="panel-collapse collapse">
-                                <div class="panel-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non blandit nibh.
-                                        Sed eget tortor tincidunt, auctor sem eget, mollis nisi. Pellentesque ipsum
-                                        erat, facilisis ut venenatis eu, sodales vel dolor fusce diam ornare.
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -1181,7 +1186,7 @@ $conn->close();
         <div class="container">
             <div class="row">
                 <div class="title-box text-center white">
-                    <h2 class="title">Publicidad</h2>
+                    <h2 class="title">Video institutional</h2>
                 </div>
                 <div class="col-md-6">
                     <div class="video-caption-main">
@@ -1313,9 +1318,9 @@ $conn->close();
                     </div>
                     <!-- Clients Logo Item-->
                     <div class="item">
-                        <a href="#">
+                        <a href="https://www.ascont.com.pe/">
                             <figure>
-                                <img src="images/clients-logo/cliente6.png" alt="" />
+                                <img src="images/clients-logo/cliente6.png" alt="ASCONT" />
                             </figure>
                         </a>
                     </div>
@@ -1388,26 +1393,27 @@ $conn->close();
                     <p>🏰​ Jr. Gamarra 432, 4to piso (Entra por la notaría León de la Cruz y sube directo por las escaleras) </p>
                     <p>📧​ jovenesporunnuevomundo@gmail.com</p>
                 </div>
-                <form action="" method="post">
+                <form id="consultaForm">
                     <div class="row">
                         <div class="col-md-4">
-                            <input type="text" name="documento" class="form-control" id="documento" value="<?php echo $documento; ?>" placeholder="DNI" <?php echo $atributoDeshabilitado; ?> required>
+                            <input type="text" required name="documentos" class="form-control" id="documentos" value="<?php echo $documento; ?>" placeholder="DNI" <?php echo $atributoDeshabilitado; ?>>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" id="nombres" name="nombres" value="<?php echo $nombres; ?>" placeholder="Nombres" type="text" <?php echo $atributoDeshabilitado; ?> required>
+                            <input class="form-control" required id="nombress" name="nombress" value="<?php echo $nombres; ?>" placeholder="Nombres" type="text" <?php echo $atributoDeshabilitado; ?>>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" id="apellidoPaterno" name="apellidoPaterno" value="<?php echo $apellidoPaterno; ?>" placeholder="Apellidos" type="text" <?php echo $atributoDeshabilitado; ?> required>
+                            <input class="form-control" required id="apellidoPaternos" name="apellidoPaternos" value="<?php echo $apellidoPaterno; ?>" placeholder="Apellidos" type="text" <?php echo $atributoDeshabilitado; ?>>
                         </div>
                         <div class="col-md-4">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electrónico" required>
+                            <input type="email" required class="form-control" id="email" name="email" placeholder="Correo Electrónico">
                         </div>
                         <div class="col-md-4">
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" required>
+                            <input type="text" required class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
                         </div>
                         <div class="col-md-12">
-                            <textarea class="form-control" id="mensaje" rows="7" placeholder="Escribe tu mensaje" required></textarea>
+                            <input type="text" required class="input-alto" id="mensaje" name="mensaje" placeholder="Escribe tu mensaje">
                         </div>
+
                         <div class="col-md-12 text-right">
                         <button type="submit" class="btn btn-green" <?php echo $botonEnviarDeshabilitado; ?>>
                             <?php echo $botonEnviarTexto; ?>
@@ -1415,6 +1421,7 @@ $conn->close();
                     </div>
                     </div>
                 </form>
+
     <script>
         // Bloquear todos los campos si el usuario es invitado
         let esInvitado = <?php echo json_encode($esInvitado); ?>;
@@ -1440,7 +1447,6 @@ $conn->close();
                     </div>
                 </div>
                 <!-- Fin del copyright-->
-
                 <!-- Iconos de redes sociales-->
                 <div class="col-md-6 col-sm-6 col-xs-6">
                     <div class="social-icons">
@@ -1469,5 +1475,6 @@ $conn->close();
     <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
     <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
+    <script src="js/registroconsulta.js"></script>
 </body>
 </html>

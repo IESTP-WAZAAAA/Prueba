@@ -46,12 +46,12 @@
     }
 
     .icono-input {
-        color: #a6a6a6;
+        color: gray;
         margin-right: 10px;
     }
 
     .icono-ojo {
-        color: #a6a6a6;
+        color: gray;
         cursor: pointer;
         position: absolute;
         right: 10px;
@@ -67,7 +67,7 @@
     }
 
     .input-estilo::placeholder {
-        color: #a6a6a6;
+        color: gray;
     }
 </style>
 
@@ -159,10 +159,8 @@
                                             <!-- Contraseña -->
                                             <div class="campo-formulario">
                                                 <i class="icono-input material-icons">lock</i>
-                                                <input type="password" id="clave_registro" name="clave"
+                                                <input type="password" id="contraseña" name="contraseña"
                                                     class="input-estilo" placeholder="Contraseña" required>
-                                                <i class="icono-ojo material-icons"
-                                                    onclick="alternarClave('clave_registro', this)">visibility</i>
                                             </div>
                                             <button type="submit" class="btn">Registrar</button>
                                         </div>
@@ -176,60 +174,8 @@
         </div>
         <br><br><br><br>
     </section>
-    <script>
-        $('#buscar').click(function () {
-            let dni = $('#documento').val();
-
-            if (!/^\d{8}$/.test(dni)) {
-                alert("El DNI debe tener 8 dígitos.");
-                return;
-            }
-
-            $.ajax({
-                url: 'PHP/consulta_dni.php',
-                type: 'post',
-                data: { dni: dni },
-                dataType: 'json',
-                success: function (r) {
-                    if (r.numeroDocumento === dni) {
-                        $("#nombres").val(r.nombres);
-                        $("#apellidoPaterno").val(`${r.apellidoPaterno} ${r.apellidoMaterno}`);
-                    } else {
-                        alert("No existe el DNI.");
-                    }
-                },
-                error: function (xhr, status, error) {
-                    alert("Error al consultar el DNI: " + error);
-                }
-            });
-        });
-    </script>
 </body>
-<script>
-    document.getElementById('registerForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        const formData = new FormData(this);
-
-        fetch('./PHP/registrer.php', {
-            method: 'POST',
-            body: formData,
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    alert(data.message);
-                    this.reset();
-                } else {
-                    alert(data.message);
-                }
-            })
-            .catch(error => {
-                alert('Error al registrar los datos: ' + error.message);
-            });
-    });
-</script>
 <script src="js/contraseña.js"></script>
-<script src="js/registro.js"></script>
-
+<script src="js/registrousuario.js"></script>
+<script src="js/consultaDNI.js"></script>
 </html>
