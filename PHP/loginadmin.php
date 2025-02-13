@@ -12,8 +12,8 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuarioadmin = $_POST['usuarioadmin'];
-    $password = $_POST['password'];
+    $usuarioadmin = htmlspecialchars(trim($_POST['usuarioadmin']));
+    $password = htmlspecialchars(trim($_POST['password']));
 
     $stmt = $conn->prepare("SELECT password FROM administracion WHERE usuarioadmin = ?");
     $stmt->bind_param("s", $usuarioadmin);

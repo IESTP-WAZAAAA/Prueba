@@ -2,11 +2,6 @@
 session_start();
 header('Content-Type: application/json');
 
-if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] === 'invitado') {
-    echo json_encode(["status" => "error", "message" => "No tienes permisos para eliminar."]);
-    exit;
-}
-
 $host = 'localhost';
 $user = 'root';
 $password = '';

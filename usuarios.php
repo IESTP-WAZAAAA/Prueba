@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] === 'invitado') {
-    header("Location: login.html");
-    exit;
-}
 
 $host = 'localhost';
 $user = 'root';
