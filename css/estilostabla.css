@@ -17,6 +17,7 @@ h2 {
     margin: 20px 0;
     font-size: 16px;
     min-width: 600px;
+    border-color: #333;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -28,12 +29,14 @@ h2 {
     color: #ffffff;
     text-align: left;
     font-weight: bold;
+    border-color: #333;
 }
 
 /* Celdas de la tabla */
 .styled-table th, .styled-table td {
     padding: 12px 15px;
     border-bottom: 1px solid #ddd;
+    border-color: #333;
 }
 
 /* Filas alternas */
@@ -43,20 +46,25 @@ h2 {
 
 /* Efecto al pasar el cursor */
 .styled-table tbody tr:hover {
-    background-color: #eacc6c;
+    background-color: #87a4f3;
     color: #032030;
 }
 
 /* Botón de eliminar */
 .delete-btn {
-    background-color: #e74c3c;
+    background-color: #d9534f;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 8px 14px;
+    width: 100px; /* Ajusta este valor según necesites */
+    font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
-    transition: 0.3s;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; /* Espacio entre el icono y el texto */
 }
 
 .delete-btn:hover {

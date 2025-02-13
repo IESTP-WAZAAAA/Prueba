@@ -129,19 +129,19 @@ $conn->close();
     border-radius: 5px;
     outline: none;
     resize: none;
-}
+    }
 
-.input-alto::placeholder {
+    .input-alto::placeholder {
     position: absolute;
     top: 10px;
     color: #999;
     font-size: 14px;
-}
+    }
 
-.input-alto:focus {
+    .input-alto:focus {
     text-align: left;
     vertical-align: top;
-}
+    }
 
 </style>
 <body data-spy="scroll" data-target="#main-menu">
@@ -154,7 +154,7 @@ $conn->close();
     <!--Fin de animación de carga -->
     <?php if (isset($_GET['bienvenido'])): ?>
         <script>
-            alert("¡BIENVENID@, <?php echo $nombreUsuario; ?>");
+            alert("!BIENVENID@, <?php echo $nombreUsuario; ?>");
         </script>
     <?php endif; ?>
     <!--Inicio de la navegación-->
@@ -680,7 +680,7 @@ $conn->close();
                             <p>Photography</p>
                         </div>
                         <!--End Caption-->
-                    </div> <!-- /.work-image-->
+                    </div>
                 </li>
                 <!--End Work Item -->
                 <!-- Work Item -->
@@ -689,9 +689,6 @@ $conn->close();
                         <img src="images/works/img2.jpg" alt="thumbnail">
                         <!--Hover link-->
                         <div class="hover-link">
-                            <a href="single-work.html">
-                                <i class="fa fa-link"></i>
-                            </a>
                             <a href="images/works/img2.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
@@ -748,8 +745,8 @@ $conn->close();
 
                         <!--Hover Caption-->
                         <div class="work-caption">
-                            <h4>Project Title</h4>
-                            <p>Photography</p>
+                            <h4>Capacitaciones</h4>
+                            <p>1era Capacitación</p>
                         </div>
                         <!--End Caption-->
                     </div>
@@ -772,8 +769,8 @@ $conn->close();
                         <!--End link-->
                         <!--Hover Caption-->
                         <div class="work-caption">
-                            <h4>Project Title</h4>
-                            <p>Photography</p>
+                            <h4>Capacitaciones</h4>
+                            <p>2da Capacitación</p>
                         </div>
                         <!--End Caption-->
                     </div> 
@@ -796,8 +793,8 @@ $conn->close();
                         <!--End link-->
                         <!--Hover Caption-->
                         <div class="work-caption">
-                            <h4>Project Title</h4>
-                            <p>Photography</p>
+                            <h4>Capacitaciones</h4>
+                            <p>3era Capacitación</p>
                         </div>
                         <!--End Caption-->
                     </div>
@@ -892,8 +889,6 @@ $conn->close();
                             <h4>Project Title</h4>
                             <p>Photography</p>
                         </div>
-                        <!--End Caption-->
-
                     </div>
                 </li>
                 <!--End Work Item -->
@@ -902,13 +897,11 @@ $conn->close();
                 <li class="work-item thumnail-img mix fashion">
                     <div class="work-image">
                         <img src="images/works/img11.jpg" alt="thumbnail">
-
                         <!--Hover link-->
                         <div class="hover-link">
                             <a href="single-work.html">
                                 <i class="fa fa-link"></i>
                             </a>
-
                             <a href="images/works/img11.jpg" class="popup-image">
                                 <i class="fa fa-plus"></i>
                             </a>
@@ -1426,7 +1419,7 @@ $conn->close();
         // Bloquear todos los campos si el usuario es invitado
         let esInvitado = <?php echo json_encode($esInvitado); ?>;
         if (esInvitado) {
-            document.querySelectorAll("input, textarea").forEach(elemento => {
+            document.querySelectorAll("input").forEach(elemento => {
                 elemento.setAttribute("readonly", "readonly");
                 elemento.classList.add("redonly");
             });

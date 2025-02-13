@@ -56,12 +56,18 @@ h2 {
     background-color: #d9534f;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 8px 14px;
+    width: 100px; /* Ajusta este valor según necesites */
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Espacio entre el icono y el texto */
 }
+
 
 .delete-btn:hover {
     background-color: #c9302c;

@@ -43,7 +43,8 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/etlinefont.css">
     <link href="css/style.css" type="text/css"  rel="stylesheet"/>
     <link rel="stylesheet" href="css/estilosnousuarios.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 	<body  data-spy="scroll" data-target="#main-menu">
 
   <!--Start Page loader -->
@@ -122,7 +123,7 @@ $result = $conn->query($sql);
                             <td><?php echo $row['usuario']; ?></td>
                             <td><?php echo $row['contraseña']; ?></td>
                             <td>
-                                <button class="delete-btn" onclick="eliminarUsuario(<?php echo $row['id']; ?>)">Eliminar</button>
+                            <button class="delete-btn" onclick="eliminarUsuario(<?php echo $row['id']; ?>)"><i class="fas fa-trash-alt"></i> Eliminar</button>
                             </td>
                         </tr>
                         <?php endwhile; ?>

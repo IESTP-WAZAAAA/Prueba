@@ -1,10 +1,4 @@
 <?php
-session_start();
-if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] === 'invitado') {
-    header("Location: login.html");
-    exit;
-}
-
 $host = 'localhost';
 $user = 'root';
 $password = '';
@@ -31,7 +25,6 @@ $result = $conn->query($sql);
     <meta name="description" content="">		
 	
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-     <!--styles -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
@@ -43,6 +36,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/etlinefont.css">
     <link href="css/style.css" type="text/css"  rel="stylesheet"/>
     <link rel="stylesheet" href="css/estilostabla.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
 	<body  data-spy="scroll" data-target="#main-menu">
 
@@ -53,8 +47,7 @@ $result = $conn->query($sql);
         </div>
    </div>
    <!--End Page loader -->
-   
-      
+
    <!--Start Navigation-->
 		<header id="header">
 				<div class="container">
@@ -66,13 +59,11 @@ $result = $conn->query($sql);
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-                            <!--Start Logo -->
 							<div class="logo-nav">
 								<a href="#">
-									<img src="images/logo.png" alt="Company logo" />
+									<img src="images/logo.png" alt="Logo voluntariado" />
 								</a>
 							</div>
-                            <!--End Logo -->
 							<div class="clear-toggle"></div>
 							<div id="main-menu" class="collapse scroll navbar-right">
 								<ul class="nav">
@@ -80,21 +71,17 @@ $result = $conn->query($sql);
                                 <li> <a href="administración.php">Consultas</a> </li>
                                 <li><a href="./PHP/logout.php" class="logout-btn">Cerrar Sesión</a></li>										
 								</ul>
-							</div><!-- end main-menu -->
+							</div>
 						</div>
 					</div>
 				</div>
 			</header>
-    <!--End Navigation-->
-
-		<!--start page-header -->
 		<section id="page-header" class="parallax">
              <div class="overlay"></div>
 			<div class="container">
 				<h1>Panel de Administración</h1>
 			</div>
 		</section>
-		<!--End page-header -->
         <div class="container">
         <h2>Lista de Consultas</h2>
         
@@ -110,6 +97,7 @@ $result = $conn->query($sql);
                             <th>Email</th>
                             <th>Teléfono</th>
                             <th>Mensaje</th>
+                            <th>Fecha</th>
                             <th>Acción</th>
                         </tr>
                     </thead>
@@ -123,8 +111,9 @@ $result = $conn->query($sql);
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['telefono']; ?></td>
                             <td><?php echo $row['mensaje']; ?></td>
+                            <td><?php echo $row['fecha']; ?></td>
                             <td>
-                                <button class="delete-btn" onclick="eliminarConsulta(<?php echo $row['id']; ?>)">Eliminar</button>
+                            <button class="delete-btn" onclick="eliminarConsulta(<?php echo $row['id']; ?>)"><i class="fas fa-trash-alt"></i> Eliminar</button>
                             </td>
                         </tr>
                         <?php endwhile; ?>
@@ -137,10 +126,6 @@ $result = $conn->query($sql);
             </div>
         <?php endif; ?>
     </div>
-
-   <a href="#" class="scrollup"> <i class="fa fa-chevron-up"> </i> </a>
-
-    <!--Plugins-->
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script> 
     <script type="text/javascript" src="js/owl-carousel/owl.carousel.js"></script>
@@ -156,4 +141,3 @@ $result = $conn->query($sql);
  </body>
 </html>
 <?php $conn->close(); ?>
-
