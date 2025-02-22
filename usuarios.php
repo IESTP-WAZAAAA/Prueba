@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['usuarioadmin'])) {
+    header("Location: loginadmin.html");
+    exit();
+}
 
 $host = 'localhost';
 $user = 'root';
@@ -132,7 +136,6 @@ $result = $conn->query($sql);
             </div>
         <?php endif; ?>
     </div>
-   <a href="#" class="scrollup"> <i class="fa fa-chevron-up"> </i> </a>
 
     <!--Plugins-->
 	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>

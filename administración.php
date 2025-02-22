@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['usuarioadmin'])) {
+    header("Location: loginadmin.html");
+    exit();
+}
 
 $host = 'localhost';
 $user = 'root';
@@ -12,11 +16,10 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Obtener todas las consultas
-$sql = "SELECT * FROM consultas";
-$result = $conn->query($sql);
+$sql = "SELECT * FROM consultas"; 
+$result = $conn->query($sql);     
 ?>
-
+  
 <!doctype html>
 <html lang="en-gb" class="no-js">
   <head>
@@ -42,16 +45,13 @@ $result = $conn->query($sql);
     
 	<body  data-spy="scroll" data-target="#main-menu">
 
-  <!--Start Page loader -->
+  <!-- Animación de carga -->
   <div id="pageloader">   
         <div class="loader">
           <img src="images/progress.gif" alt='loader' />
         </div>
-   </div>
-   <!--End Page loader -->
-
-   <!--Start Navigation-->
-		<header id="header">
+    </div>
+	     <header id="header">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
@@ -77,7 +77,7 @@ $result = $conn->query($sql);
 						</div>
 					</div>
 				</div>
-			</header>
+		</header>
 		<section id="page-header" class="parallax">
              <div class="overlay"></div>
 			<div class="container">
@@ -124,7 +124,7 @@ $result = $conn->query($sql);
             </div>
         <?php else: ?>
             <div class="no-consultas">
-                <p>📌 <strong>Sin consultas.</strong> No hay registros en este momento.</p>
+                <p>📌<strong>Sin consultas.</strong> No hay registros en este momento.</p>
             </div>
         <?php endif; ?>
     </div>

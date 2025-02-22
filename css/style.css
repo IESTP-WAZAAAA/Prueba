@@ -1619,130 +1619,6 @@ ul.timeline {
 	margin-right:15px;
 }
 
-
-/*-----------------------------------------------------------------*/
-/* Team
-/*-----------------------------------------------------------------*/
-
-
-#team {
-	padding:100px 0px 130px;
-	background: #FFF;
-}
-
-.team-items {
-	width: 100%;
-	height: auto;
-	overflow: hidden;
-	position: relative;
-}
-
-.team-items .item {
-	background: #fff;
-	height: auto;
-	font-weight: 300;
-	margin:0px 10px 10px;
-	padding: 15px;
-	cursor: pointer;
-}
-
-.team-items .item img {
-	margin-bottom: 20px;
-}
-
-.team-items .item h4 {
-	margin-bottom: 6px;
-}
-
-.team-items .item h5 {
-	font-weight: 600;
-	text-transform: none;
-	font-size: 14px;
-	color: #464745;
-}
-
-.team-items .item p {
-	margin-bottom: 9px;
-}
-
-.socials {
-	margin-bottom: 10px;
-	margin-top: 15px;
-	width: 100%;
-}
-
-.socials ul {
-	margin:0px;
-	padding:0px;
-}
-
-.socials ul li {
-	display:inline-block;
-	list-style:none;
-}
-
-.socials ul li a {
-	background: #FFF;
-	border: 1px solid #A9ACAE;
-	color: #A0A3A5;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 14px;
-	height: 30px;
-	margin-left: 5px;
-	text-align: center;
-	width: 30px;
-	line-height: 30px;
-	border-radius: 50%;
-	-webkit-transition: all 0.7s ease-in-out;
-	-moz-transition: all 0.7s ease-in-out;
-	-ms-transition: all 0.7s ease-in-out;
-	-o-transition: all 0.7s ease-in-out;
-	transition: all 0.7s ease-in-out;
-
-}
-
-.socials ul li a:hover {
-	background:#7EC13F;
-	border-color:#7EC13F;
-	color:#FFF;
-}
-
-#team .owl-theme .owl-controls {
-	margin-top: 10px;
-	text-align: center;
-	position: relative;
-	height: 40px;
-}
-
-#team .owl-prev, #team .owl-next {
-	display: block;
-	width: 30px;
-	height: 30px;
-	line-height:20px;
-	font-size:20px;
-	border-radius:0;
-	opacity:1;
-	background:#FA3636;
-	position: absolute;
-	transition: all 0.3s ease 0s;
-}
-
-#team .owl-prev {
-	right: 50%;
-	margin-right: 10px;
-}
-
-#team .owl-next {
-	left: 50%;
-	margin-left: 10px;
-}
-
-#team .owl-prev:hover, #team .owl-next:hover {
-	background:#3C3C3C;
-}
-
-
 /*-----------------------------------------------------------------*/
 /* Skills
 /*-----------------------------------------------------------------*/
@@ -2039,109 +1915,32 @@ ul.timeline {
 /* Blog
 /*-----------------------------------------------------------------*/
 
-.blog-post {
-	padding: 0px;
-	background: #FEFDFD;
-	border: 1px solid #F6F3F3;
-	margin-bottom: 30px;
-	box-shadow: 0px 0px 2px 1px rgba(216, 213, 213, 0.14);
+.blog-section {
+	background-image: url('../images/fondo.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	padding: 60px 20px;
+	border-radius: 10px;
+	width: 100vw;
+	margin-left: calc(-50vw + 50%);
 }
-
-.post-desc {
-	padding: 25px 20px;
+.blog-section h2 {
+	color: #333;
+	font-weight: bold;
 }
-
-.post-desc h4 {
-	font-size:15px;
-	line-height:20px;
-	margin-bottom: 8px;
+.blog-section img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 20px 15px 30px 25px;
 }
-
-.post-desc h5 {
-    color: #585957;
-    font-size: 13px;
-    font-weight: 700;
-    text-shadow: 0px 0px 1px #E0D6D6;
-    font-style: italic;
+.blog-section .btn-secondary {
+	background-color: #6c757d;
+	color: white;
+	border: none;
 }
-
-.post-media {
-	overflow: hidden;
-	max-height: 360px;
-}
-.post-media img {
-	max-width:100%;
-	height:auto;
-}
-
-.post-blog .btn {
-	text-transform: uppercase;
-	margin-top: 15px;
-}
-
-
-/*-----------------------------------------------------------------*/
-/* Testimonial
-/*-----------------------------------------------------------------*/
-
-
-#testimonials {
-	background:url(../images/parallax/testimonials.jpg) no-repeat;
-}
-
-#testimonials {
-	color:#fff;
-	position:relative;
-	padding:100px 0px;
-}
-
-#testimonials .container {
-	position:relative;
-}
-
-#testimonials .items {
-	margin-bottom: 30px;
-	margin-top:-7px;
-	color:#fff;
-	text-align:center;
-}
-
-#testimonials .testimonial-pic {
-	margin: 10px 0px;
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-}
-
-#testimonials .desc {
-	font-size:19px;
-	line-height: 36px;
-	margin-bottom: 30px;
-	font-style: italic;
-	font-family: "Roboto";
-}
-
-#testimonials .name {
-	color:#FFF;
-	font-weight: 600;
-	margin-top:20px;
-	font-size: 18px;
-}
-
-#testimonials .owl-controls .owl-page span {
-	background:none;
-	display: block;
-	margin: 5px 4px;
-	opacity: 1;
-	width:12px;
-	height:12px;
-	margin-right:10px;
-	border:2px solid #ccc;
-}
-
-#testimonials .owl-controls .owl-page.active span {
-	background:#7EC13F;
-	border-color:#7EC13F;
+.blog-section .btn-secondary:hover {
+	background-color: #5a6268;
 }
 
 /*-----------------------------------------------------------------*/

@@ -153,9 +153,7 @@ $conn->close();
     </div>
     <!--Fin de animación de carga -->
     <?php if (isset($_GET['bienvenido'])): ?>
-        <script>
-            alert("!BIENVENID@, <?php echo $nombreUsuario; ?>");
-        </script>
+        <script> alert("!BIENVENID@, <?php echo $nombreUsuario; ?>");</script>
     <?php endif; ?>
     <!--Inicio de la navegación-->
     <header id="header">
@@ -184,7 +182,7 @@ $conn->close();
                             <li><a href="#history">Historia</a></li>
                             <li><a href="#works">Nuestros Trabajos</a></li>
                             <li><a href="#services">Servicios</a></li>
-                            <li><a href="#blog">Proyectos</a></li>
+                            <li><a href="#blog">Blogs</a></li>
                             <li><a href="#contact">Contactos</a></li>
                             <li><button class="btn-sesion" onclick="window.location.href='<?php echo $botonEnlace; ?>'">
                                 <?php echo $botonTexto; ?>
@@ -1233,64 +1231,22 @@ $conn->close();
     <!--Fin del video video-->
 
     <!-- Inicio del blog-->
-    <section id="blog" class="section">
+    <section id="blog" class="container-fluid py-5 text-center blog-section">
+        <h2 class="text-center mb-4">Mi Primer Blog</h2> 
+        <br><br>
         <div class="container">
-            <div class="row">
-
-                <div class="title-box text-center">
-                    <h2 class="title">Nuestros Blogs</h2>
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="./images/empre.jpg" alt="Imagen Blog" class="imagen">
                 </div>
-
-                <!-- Start Blog item #1-->
-                <div class="col-md-4">
-                    <div class="blog-post">
-                        <div class="post-media">
-                            <img src="images/blog/blog3.jpg" alt="">
-                        </div>
-                        <div class="post-desc">
-                            <h4>consectetur adipisicing Inventore</h4>
-                            <h5>12 May, 2015 / 5 Comments</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, dolorum, fugiat,
-                                eligendi magni quibusdam iure cupiditate ex voluptas unde</p>
-                            <a href="blog.html" class="btn btn-gray-border">Read More</a>
-                        </div>
-                    </div>
+                <div class="col-md-8 text-center">
+                    <h4 class="fw-bold mt-3">Emprende con Éxito: Consejos y Estrategias para Triunfar en los Negocios</h4>
+                    <p class="text-muted">Emprender es un viaje lleno de desafíos, decisiones y aprendizajes. En este espacio, encontrarás ideas, estrategias y herramientas que te ayudarán a tomar el control de tu camino y construir algo grande. 
+                    No importa en qué etapa te encuentres, siempre hay formas de mejorar, innovar y alcanzar nuevas oportunidades. Prepárate para descubrir lo que necesitas saber para avanzar con confianza y hacer que cada paso cuente.</p>
+                    <a href="./PHP/descarga.php" class="btn btn-secondary"><i class="fa-solid fa-arrow-right me-2"></i> Ver más</a>
                 </div>
-
-                <!-- Start Blog item #2-->
-                <div class="col-md-4">
-                    <div class="blog-post">
-                        <div class="post-media">
-                            <img src="images/blog/blog2.jpg" alt="">
-                        </div>
-                        <div class="post-desc">
-                            <h4>consectetur adipisicing Inventore</h4>
-                            <h5>12 May, 2015 / 3 Comments</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, dolorum, fugiat,
-                                eligendi magni quibusdam iure cupiditate ex voluptas unde</p>
-                            <a href="blog.html" class="btn btn-gray-border">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Start Blog item #3-->
-                <div class="col-md-4">
-                    <div class="blog-post">
-                        <div class="post-media">
-                            <img src="images/blog/blog3.jpg" alt="">
-                        </div>
-                        <div class="post-desc">
-                            <h4>consectetur adipisicing Inventore</h4>
-                            <h5>12 May, 2015 / 11 Comments</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, dolorum, fugiat,
-                                eligendi magni quibusdam iure cupiditate ex voluptas unde</p>
-                            <a href="blog.html" class="btn btn-gray-border">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div> 
+        </div>
     </section>
     <!-- Fin del blog-->
     <!--Start clients-->
@@ -1361,7 +1317,7 @@ $conn->close();
                     <div class="item">
                         <a href="#">
                             <figure>
-                                <img src="images/clients-logo/client1.png" alt="" />
+                                <img src="images/clients-logo/client4.png" alt="" />
                             </figure>
                         </a>
                     </div>
